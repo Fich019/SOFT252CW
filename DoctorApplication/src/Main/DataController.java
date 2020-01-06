@@ -5,10 +5,15 @@
  */
 package Main;
 
+import Users.User;
+import java.util.ArrayList;
+
 /**
  *
  * @author Zack
  */
 public class DataController {
+    public static ArrayList<User> Users = new ArrayList<User>();
     
+    public static ArrayList<User> Temp = new ArrayList<User>();
 }

@@ -5,6 +5,10 @@
  */
 package formsMain;
 
+import Main.DataController;
+import Users.PatientUser;
+import static Users.User.count;
+
 /**
  *
  * @author Zack
@@ -155,7 +159,25 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAgeActionPerformed
 
     private void btnRequestAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRequestAccMouseClicked
-
+        int ID = count.incrementAndGet();
+        
+        if (DataController.Users.isEmpty()){
+            
+            String uID = String.format("A" + "%04d", ID);
+            PatientUser user = new PatientUser(uID, txtUname.toString(), txtaddress.toString(), txtSex.toString(), txtAge.toString());
+        
+            DataController.Users.add(user);
+            System.out.println(DataController.Users.get(0).getUserID());
+        } else {
+            
+            String uID = String.format("P" + "%04d", ID);
+            PatientUser user = new PatientUser(uID, txtUname.toString(), txtaddress.toString(), txtSex.toString(), txtAge.toString());
+        
+            DataController.Temp.add(user);
+            System.out.println(DataController.Temp.get(0).getUserID());
+            
+        }
+            //Need to add approve request for secretary
     }//GEN-LAST:event_btnRequestAccMouseClicked
 
     private void btnRequestAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAccActionPerformed

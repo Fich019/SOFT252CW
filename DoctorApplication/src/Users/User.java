@@ -5,12 +5,16 @@
  */
 package Users;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 
 /**
  *
  * @author Zack
  */
 public interface User {
+    
+    public static final AtomicInteger count = new AtomicInteger(0); 
     
     String userID = "";
     String name = "";
