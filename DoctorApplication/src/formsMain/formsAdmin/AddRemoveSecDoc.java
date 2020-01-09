@@ -29,19 +29,19 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
 
         btnBack = new javax.swing.JButton();
         lblDesiredPasswd = new javax.swing.JLabel();
-        txtPasswd = new javax.swing.JTextField();
+        txtpassword = new javax.swing.JTextField();
         lblConfirmPassword = new javax.swing.JLabel();
-        txtConfirmPasswd = new javax.swing.JTextField();
-        RadBtnAdd = new javax.swing.JRadioButton();
-        RadBtnRemove = new javax.swing.JRadioButton();
+        txtconfirmPassword = new javax.swing.JTextField();
+        RadBtnadd = new javax.swing.JRadioButton();
+        RadBtnremove = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         btnremAcc = new javax.swing.JButton();
         lblAddress = new javax.swing.JLabel();
         lblDesiredUname = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
-        txtUname = new javax.swing.JTextField();
+        txtaddress = new javax.swing.JTextField();
+        txtuserName = new javax.swing.JTextField();
         btnaddAcc = new javax.swing.JButton();
-        btnBack1 = new javax.swing.JButton();
+        btnback = new javax.swing.JButton();
 
         btnBack.setText("Back");
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -56,28 +56,28 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
 
         lblConfirmPassword.setText("Confirm Password :");
 
-        RadBtnAdd.setSelected(true);
-        RadBtnAdd.setText("Add");
-        RadBtnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+        RadBtnadd.setSelected(true);
+        RadBtnadd.setText("Add");
+        RadBtnadd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RadBtnAddMouseClicked(evt);
+                RadBtnaddMouseClicked(evt);
             }
         });
-        RadBtnAdd.addActionListener(new java.awt.event.ActionListener() {
+        RadBtnadd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RadBtnAddActionPerformed(evt);
+                RadBtnaddActionPerformed(evt);
             }
         });
 
-        RadBtnRemove.setText("Remove");
-        RadBtnRemove.addMouseListener(new java.awt.event.MouseAdapter() {
+        RadBtnremove.setText("Remove");
+        RadBtnremove.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RadBtnRemoveMouseClicked(evt);
+                RadBtnremoveMouseClicked(evt);
             }
         });
-        RadBtnRemove.addActionListener(new java.awt.event.ActionListener() {
+        RadBtnremove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RadBtnRemoveActionPerformed(evt);
+                RadBtnremoveActionPerformed(evt);
             }
         });
 
@@ -97,10 +97,15 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
             }
         });
 
-        btnBack1.setText("Back");
-        btnBack1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnback.setText("Back");
+        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBack1MouseClicked(evt);
+                btnbackMouseClicked(evt);
+            }
+        });
+        btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackActionPerformed(evt);
             }
         });
 
@@ -118,11 +123,11 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
                                     .addGap(60, 60, 60)
                                     .addComponent(lblDesiredUname)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtUname, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(RadBtnAdd)
-                                        .addComponent(RadBtnRemove))
+                                        .addComponent(RadBtnadd)
+                                        .addComponent(RadBtnremove))
                                     .addGap(87, 87, 87)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -131,9 +136,9 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
                                     .addComponent(lblConfirmPassword))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                                    .addComponent(txtPasswd)
-                                    .addComponent(txtConfirmPasswd))))
+                                    .addComponent(txtaddress, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                                    .addComponent(txtpassword)
+                                    .addComponent(txtconfirmPassword))))
                         .addGap(0, 142, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -144,7 +149,7 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBack1)))
+                        .addComponent(btnback)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,27 +158,27 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(btnBack1))
+                    .addComponent(btnback))
                 .addGap(15, 15, 15)
-                .addComponent(RadBtnAdd)
+                .addComponent(RadBtnadd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RadBtnRemove)
+                .addComponent(RadBtnremove)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDesiredUname))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAddress)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDesiredPasswd)
-                    .addComponent(txtPasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConfirmPassword)
-                    .addComponent(txtConfirmPasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtconfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(btnaddAcc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -184,25 +189,25 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RadBtnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RadBtnAddMouseClicked
+    private void RadBtnaddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RadBtnaddMouseClicked
         // TODO add your handling code here:
         btnremAcc.setEnabled(false);
         btnaddAcc.setEnabled(true);
-    }//GEN-LAST:event_RadBtnAddMouseClicked
+    }//GEN-LAST:event_RadBtnaddMouseClicked
 
-    private void RadBtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadBtnAddActionPerformed
+    private void RadBtnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadBtnaddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RadBtnAddActionPerformed
+    }//GEN-LAST:event_RadBtnaddActionPerformed
 
-    private void RadBtnRemoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RadBtnRemoveMouseClicked
+    private void RadBtnremoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RadBtnremoveMouseClicked
         // TODO add your handling code here:
         btnremAcc.setEnabled(true);
         btnaddAcc.setEnabled(false);
-    }//GEN-LAST:event_RadBtnRemoveMouseClicked
+    }//GEN-LAST:event_RadBtnremoveMouseClicked
 
-    private void RadBtnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadBtnRemoveActionPerformed
+    private void RadBtnremoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadBtnremoveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RadBtnRemoveActionPerformed
+    }//GEN-LAST:event_RadBtnremoveActionPerformed
 
     private void btnaddAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddAccActionPerformed
         // TODO add your handling code here:
@@ -214,11 +219,15 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnBackMouseClicked
 
-    private void btnBack1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBack1MouseClicked
+    private void btnbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbackMouseClicked
         // TODO add your handling code here:
         new AdminHomeScreen().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnBack1MouseClicked
+    }//GEN-LAST:event_btnbackMouseClicked
+
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnbackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,20 +265,20 @@ public class AddRemoveSecDoc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton RadBtnAdd;
-    private javax.swing.JRadioButton RadBtnRemove;
+    private javax.swing.JRadioButton RadBtnadd;
+    private javax.swing.JRadioButton RadBtnremove;
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnBack1;
     private javax.swing.JButton btnaddAcc;
+    private javax.swing.JButton btnback;
     private javax.swing.JButton btnremAcc;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblConfirmPassword;
     private javax.swing.JLabel lblDesiredPasswd;
     private javax.swing.JLabel lblDesiredUname;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtConfirmPasswd;
-    private javax.swing.JTextField txtPasswd;
-    private javax.swing.JTextField txtUname;
+    private javax.swing.JTextField txtaddress;
+    private javax.swing.JTextField txtconfirmPassword;
+    private javax.swing.JTextField txtpassword;
+    private javax.swing.JTextField txtuserName;
     // End of variables declaration//GEN-END:variables
 }

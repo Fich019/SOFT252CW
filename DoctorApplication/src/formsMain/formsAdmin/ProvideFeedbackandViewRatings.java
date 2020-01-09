@@ -27,42 +27,42 @@ public class ProvideFeedbackandViewRatings extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtDoctorID = new javax.swing.JTextField();
+        txtdoctorID = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtRatings = new javax.swing.JTextArea();
+        txbxfeedback = new javax.swing.JTextArea();
         lblDoctorID = new javax.swing.JLabel();
-        btnSubFeed = new javax.swing.JButton();
+        btnsubFeed = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txbxrating = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
+        btnback = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtRatings.setColumns(20);
-        txtRatings.setRows(5);
-        jScrollPane1.setViewportView(txtRatings);
+        txbxfeedback.setColumns(20);
+        txbxfeedback.setRows(5);
+        jScrollPane1.setViewportView(txbxfeedback);
 
         lblDoctorID.setText("Doctor ID");
 
-        btnSubFeed.setText("Sumbit Feedback");
+        btnsubFeed.setText("Sumbit Feedback");
 
         jLabel1.setText("Provide Feedback for Doctors");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txbxrating.setColumns(20);
+        txbxrating.setRows(5);
+        jScrollPane2.setViewportView(txbxrating);
 
         jLabel2.setText("Ratings");
 
         jLabel3.setText("Feedback");
 
-        btnBack.setText("Back");
-        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnback.setText("Back");
+        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBackMouseClicked(evt);
+                btnbackMouseClicked(evt);
             }
         });
 
@@ -76,11 +76,11 @@ public class ProvideFeedbackandViewRatings extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblDoctorID)
                         .addGap(18, 18, 18)
-                        .addComponent(txtDoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtdoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSubFeed))
+                        .addComponent(btnsubFeed))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
@@ -94,7 +94,7 @@ public class ProvideFeedbackandViewRatings extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBack)))
+                        .addComponent(btnback)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -103,11 +103,11 @@ public class ProvideFeedbackandViewRatings extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(btnBack))
+                    .addComponent(btnback))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDoctorID)
-                    .addComponent(txtDoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtdoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -117,18 +117,18 @@ public class ProvideFeedbackandViewRatings extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSubFeed)
+                .addComponent(btnsubFeed)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
+    private void btnbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbackMouseClicked
         // TODO add your handling code here:
         new AdminHomeScreen().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnBackMouseClicked
+    }//GEN-LAST:event_btnbackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -167,16 +167,16 @@ public class ProvideFeedbackandViewRatings extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnSubFeed;
+    private javax.swing.JButton btnback;
+    private javax.swing.JButton btnsubFeed;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblDoctorID;
-    private javax.swing.JTextField txtDoctorID;
-    private javax.swing.JTextArea txtRatings;
+    private javax.swing.JTextArea txbxfeedback;
+    private javax.swing.JTextArea txbxrating;
+    private javax.swing.JTextField txtdoctorID;
     // End of variables declaration//GEN-END:variables
 }

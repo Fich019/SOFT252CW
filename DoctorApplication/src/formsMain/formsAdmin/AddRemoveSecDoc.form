@@ -43,12 +43,12 @@
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="lblDesiredUname" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtUname" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="txtuserName" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="RadBtnAdd" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="RadBtnRemove" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="RadBtnadd" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="RadBtnremove" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                               </Group>
@@ -61,9 +61,9 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtAddress" alignment="0" pref="102" max="32767" attributes="0"/>
-                                  <Component id="txtPasswd" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtConfirmPasswd" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtaddress" alignment="0" pref="102" max="32767" attributes="0"/>
+                                  <Component id="txtpassword" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtconfirmPassword" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -80,7 +80,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnBack1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnback" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -93,31 +93,31 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBack1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnback" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Component id="RadBtnAdd" min="-2" max="-2" attributes="0"/>
+              <Component id="RadBtnadd" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="RadBtnRemove" min="-2" max="-2" attributes="0"/>
+              <Component id="RadBtnremove" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="14" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtUname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtuserName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblDesiredUname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblAddress" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtaddress" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblDesiredPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtpassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblConfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtConfirmPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtconfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="btnaddAcc" min="-2" max="-2" attributes="0"/>
@@ -134,32 +134,32 @@
         <Property name="text" type="java.lang.String" value="Password :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPasswd">
+    <Component class="javax.swing.JTextField" name="txtpassword">
     </Component>
     <Component class="javax.swing.JLabel" name="lblConfirmPassword">
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirm Password :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtConfirmPasswd">
+    <Component class="javax.swing.JTextField" name="txtconfirmPassword">
     </Component>
-    <Component class="javax.swing.JRadioButton" name="RadBtnAdd">
+    <Component class="javax.swing.JRadioButton" name="RadBtnadd">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RadBtnAddMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadBtnAddActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RadBtnaddMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadBtnaddActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="RadBtnRemove">
+    <Component class="javax.swing.JRadioButton" name="RadBtnremove">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remove"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RadBtnRemoveMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadBtnRemoveActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RadBtnremoveMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadBtnremoveActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -183,9 +183,9 @@
         <Property name="text" type="java.lang.String" value="Name :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAddress">
+    <Component class="javax.swing.JTextField" name="txtaddress">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtUname">
+    <Component class="javax.swing.JTextField" name="txtuserName">
     </Component>
     <Component class="javax.swing.JButton" name="btnaddAcc">
       <Properties>
@@ -195,12 +195,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaddAccActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnBack1">
+    <Component class="javax.swing.JButton" name="btnback">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBack1MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnbackMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnbackActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

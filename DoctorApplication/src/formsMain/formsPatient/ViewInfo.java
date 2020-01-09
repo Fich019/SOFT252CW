@@ -34,7 +34,7 @@ public class ViewInfo extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtVAppointments = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txtVHistory1 = new javax.swing.JTextArea();
+        txtVHistory = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnback1 = new javax.swing.JButton();
@@ -53,9 +53,9 @@ public class ViewInfo extends javax.swing.JFrame {
         txtVAppointments.setRows(5);
         jScrollPane2.setViewportView(txtVAppointments);
 
-        txtVHistory1.setColumns(20);
-        txtVHistory1.setRows(5);
-        jScrollPane3.setViewportView(txtVHistory1);
+        txtVHistory.setColumns(20);
+        txtVHistory.setRows(5);
+        jScrollPane3.setViewportView(txtVHistory);
 
         jLabel3.setText("History");
 
@@ -182,7 +182,7 @@ public class ViewInfo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea txtVAppointments;
-    private javax.swing.JTextArea txtVHistory1;
+    private javax.swing.JTextArea txtVHistory;
     private javax.swing.JTextArea txtVPrescriptions;
     // End of variables declaration//GEN-END:variables
 }

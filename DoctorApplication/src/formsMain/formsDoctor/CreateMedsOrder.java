@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package formsMain.formsAdmin;
+package formsMain.formsDoctor;
 
 /**
  *
  * @author Zack
  */
-public class AdminHomeScreen extends javax.swing.JFrame {
+public class CreateMedsOrder extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminHomeScreen
+     * Creates new form CreateMedsOrder
      */
-    public AdminHomeScreen() {
+    public CreateMedsOrder() {
         initComponents();
     }
 
@@ -27,23 +27,19 @@ public class AdminHomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        btncreateAcc = new javax.swing.JButton();
-        btnaddRem = new javax.swing.JButton();
-        btnprovideFeedback = new javax.swing.JButton();
-        btnlogOff = new javax.swing.JButton();
+        lblMedName = new javax.swing.JLabel();
+        txtmedName = new javax.swing.JTextField();
+        lblQuantity = new javax.swing.JLabel();
+        txtquantity = new javax.swing.JTextField();
+        btnorder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Admin Home Screen");
+        lblMedName.setText("Medicine Name");
 
-        btncreateAcc.setText("Create admin account");
+        lblQuantity.setText("Quantity");
 
-        btnaddRem.setText("Add / Remove Doctors / Secretaries");
-
-        btnprovideFeedback.setText("Provide feedback for Doctors and view ratings");
-
-        btnlogOff.setText("Log Off");
+        btnorder.setText("Order");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,30 +47,32 @@ public class AdminHomeScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnaddRem)
-                    .addComponent(jLabel1)
-                    .addComponent(btncreateAcc)
-                    .addComponent(btnprovideFeedback))
-                .addGap(0, 55, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblQuantity)
+                    .addComponent(lblMedName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtmedName)
+                    .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(260, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnlogOff)
+                .addComponent(btnorder)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addComponent(btnaddRem, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btncreateAcc, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnprovideFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(btnlogOff)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMedName)
+                    .addComponent(txtmedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuantity)
+                    .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addComponent(btnorder)
                 .addContainerGap())
         );
 
@@ -98,29 +96,29 @@ public class AdminHomeScreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminHomeScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateMedsOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminHomeScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateMedsOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminHomeScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateMedsOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminHomeScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateMedsOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminHomeScreen().setVisible(true);
+                new CreateMedsOrder().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnaddRem;
-    private javax.swing.JButton btncreateAcc;
-    private javax.swing.JButton btnlogOff;
-    private javax.swing.JButton btnprovideFeedback;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnorder;
+    private javax.swing.JLabel lblMedName;
+    private javax.swing.JLabel lblQuantity;
+    private javax.swing.JTextField txtmedName;
+    private javax.swing.JTextField txtquantity;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,7 +27,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnRequestAcc" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnrequestAcc" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -41,12 +41,12 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtUname" alignment="0" pref="245" max="32767" attributes="0"/>
-                          <Component id="txtConfirmPasswd" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtPasswd" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtuserName" alignment="0" pref="245" max="32767" attributes="0"/>
+                          <Component id="txtconfirmPassword" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtpassword" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="txtSex" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtAge" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtsex" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtage" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -66,18 +66,18 @@
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtUname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtuserName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblDesiredUname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtage" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSex" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtsex" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -87,15 +87,15 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblDesiredPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtConfirmPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtconfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblConfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtpassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnRequestAcc" min="-2" max="-2" attributes="0"/>
+              <Component id="btnrequestAcc" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -107,16 +107,16 @@
         <Property name="text" type="java.lang.String" value="Confirm Password :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtConfirmPasswd">
+    <Component class="javax.swing.JTextField" name="txtconfirmPassword">
     </Component>
     <Component class="javax.swing.JLabel" name="lblAge">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter your Age :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAge">
+    <Component class="javax.swing.JTextField" name="txtage">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAgeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtageActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAddress">
@@ -124,15 +124,15 @@
         <Property name="text" type="java.lang.String" value="Enter your Address :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtSex">
+    <Component class="javax.swing.JTextField" name="txtsex">
     </Component>
-    <Component class="javax.swing.JButton" name="btnRequestAcc">
+    <Component class="javax.swing.JButton" name="btnrequestAcc">
       <Properties>
         <Property name="text" type="java.lang.String" value="Create Account"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnRequestAccMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRequestAccActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnrequestAccMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnrequestAccActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -147,7 +147,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="txtaddress">
+        <Component class="javax.swing.JTextArea" name="txbxaddress">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -160,14 +160,14 @@
         <Property name="text" type="java.lang.String" value="Enter your Name :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtUname">
+    <Component class="javax.swing.JTextField" name="txtuserName">
     </Component>
     <Component class="javax.swing.JLabel" name="lblDesiredPasswd">
       <Properties>
         <Property name="text" type="java.lang.String" value="Chose A Strong Password :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPasswd">
+    <Component class="javax.swing.JTextField" name="txtpassword">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
