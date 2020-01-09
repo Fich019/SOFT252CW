@@ -161,22 +161,22 @@ public class CreateAccount extends javax.swing.JFrame {
     private void btnrequestAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrequestAccMouseClicked
         int ID = count.incrementAndGet();
         
-        if (DataController.Users.isEmpty()){
-            
-            String uID = String.format("A" + "%04d", ID);
-            PatientUser user = new PatientUser(uID, txtuserName.toString(), txbxaddress.toString(), txtsex.toString(), txtage.toString());
-        
-            DataController.Users.add(user);
-            System.out.println(DataController.Users.get(0).getUserID());
-        } else {
-            
-            String uID = String.format("P" + "%04d", ID);
-            PatientUser user = new PatientUser(uID, txtuserName.toString(), txbxaddress.toString(), txtsex.toString(), txtage.toString());
-        
-            DataController.Temp.add(user);
-            System.out.println(DataController.Temp.get(0).getUserID());
-            
-        }
+//        if (DataController.Users.isEmpty()){
+//            
+//            String uID = String.format("A" + "%04d", ID);
+//            PatientUser user = new PatientUser(uID, txtuserName.toString(), txbxaddress.toString(), txtsex.toString(), txtage.toString());
+//        
+//            DataController.Users.add(user);
+//            System.out.println(DataController.Users.get(0).getUserID());
+//        } else {
+//            
+//            String uID = String.format("P" + "%04d", ID);
+//            PatientUser user = new PatientUser(uID, txtuserName.toString(), txbxaddress.toString(), txtsex.toString(), txtage.toString());
+//        
+//            DataController.Temp.add(user);
+//            System.out.println(DataController.Temp.get(0).getUserID());
+//            
+//        }
             //Need to add approve request for secretary
     }//GEN-LAST:event_btnrequestAccMouseClicked
 

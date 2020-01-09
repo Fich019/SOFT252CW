@@ -68,21 +68,34 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Create admin account"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btncreateAccMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnaddRem">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add / Remove Doctors / Secretaries"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnaddRemMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnprovideFeedback">
       <Properties>
         <Property name="text" type="java.lang.String" value="Provide feedback for Doctors and view ratings"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnprovideFeedbackMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnlogOff">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log Off"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnlogOffMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnlogOffActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

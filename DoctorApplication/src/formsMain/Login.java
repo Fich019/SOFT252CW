@@ -5,6 +5,10 @@
  */
 package formsMain;
 
+import Users.User;
+import javax.swing.JOptionPane;
+import system.LoginScript;
+
 /**
  *
  * @author Zack
@@ -42,6 +46,11 @@ public class Login extends javax.swing.JFrame {
         lblPasswd.setText("Password :");
 
         btnlogin.setText("Login");
+        btnlogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnloginMouseClicked(evt);
+            }
+        });
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnloginActionPerformed(evt);
@@ -111,6 +120,23 @@ public class Login extends javax.swing.JFrame {
         new CreateAccount().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnmakeAccountMouseClicked
+
+    private void btnloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnloginMouseClicked
+        // TODO add your handling code here:
+        if ( txtuserName.getText().length() == 0 ){
+            JOptionPane.showMessageDialog(null, "Please enter a username", "Username Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        if ( txtpassword.getText().length() == 0 ){
+            JOptionPane.showMessageDialog(null, "Please enter a password", "Password Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        String ID = txtuserName.getText();
+        String password = txtpassword.getText();
+        LoginScript user = new LoginScript(ID, password);
+        user.Login(ID, password);
+        this.dispose();
+    }//GEN-LAST:event_btnloginMouseClicked
 
     /**
      * @param args the command line arguments

@@ -5,40 +5,28 @@
  */
 package Users;
 
-import formsMain.formsPatient.PatientHomeScreen;
+import formsMain.formsSecretary.SecretaryHomeScreen;
 
 /**
  *
  * @author Zack
  */
-public class PatientUser implements User{
-    
-    public static String userID = "";
+public class SecretaryUser implements User {
+
+     private String userID = "";
     private String name = "";
     private String address = "";
-    private String sex = "";
-    private String age;
     private String password = "";
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void PatientLogin(){
-        PatientHomeScreen patientHome = new PatientHomeScreen(); 
-        patientHome.setVisible(true);
+    public void SecretaryLogin(){
+        SecretaryHomeScreen secretaryHome = new SecretaryHomeScreen(); 
+        secretaryHome.setVisible(true);
     }
     
-    public PatientUser(String userID, String name, String address, String sex, String age, String password){
+    public SecretaryUser(String userID, String name, String address, String password){
         this.userID = userID;
         this.name = name;
         this.address = address;
-        this.sex = sex;
-        this.age = age;
         this.password = password;
     }
     
@@ -47,7 +35,6 @@ public class PatientUser implements User{
         return userID;
     }
 
-    
     public void setUserID(String userID) {
         this.userID = userID;
     }
@@ -57,7 +44,6 @@ public class PatientUser implements User{
         return name;
     }
 
-    
     public void setName(String name) {
         this.name = name;
     }
@@ -67,26 +53,16 @@ public class PatientUser implements User{
         return address;
     }
 
-    
     public void setAddress(String address) {
         this.address = address;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
-    public String getSex() {
-        return sex;
-    }
-
-    
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 }

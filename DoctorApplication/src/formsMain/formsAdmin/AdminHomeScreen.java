@@ -5,6 +5,8 @@
  */
 package formsMain.formsAdmin;
 
+import formsMain.HomeScreen;
+
 /**
  *
  * @author Zack
@@ -38,12 +40,37 @@ public class AdminHomeScreen extends javax.swing.JFrame {
         jLabel1.setText("Admin Home Screen");
 
         btncreateAcc.setText("Create admin account");
+        btncreateAcc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncreateAccMouseClicked(evt);
+            }
+        });
 
         btnaddRem.setText("Add / Remove Doctors / Secretaries");
+        btnaddRem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnaddRemMouseClicked(evt);
+            }
+        });
 
         btnprovideFeedback.setText("Provide feedback for Doctors and view ratings");
+        btnprovideFeedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnprovideFeedbackMouseClicked(evt);
+            }
+        });
 
         btnlogOff.setText("Log Off");
+        btnlogOff.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnlogOffMouseClicked(evt);
+            }
+        });
+        btnlogOff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlogOffActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,6 +107,34 @@ public class AdminHomeScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnlogOffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlogOffMouseClicked
+        // TODO add your handling code here:
+        new HomeScreen().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnlogOffMouseClicked
+
+    private void btnlogOffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogOffActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnlogOffActionPerformed
+
+    private void btnaddRemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnaddRemMouseClicked
+        // TODO add your handling code here:
+        new AddRemoveSecDoc().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnaddRemMouseClicked
+
+    private void btncreateAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncreateAccMouseClicked
+        // TODO add your handling code here:
+        new CreateOwnAccount().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btncreateAccMouseClicked
+
+    private void btnprovideFeedbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnprovideFeedbackMouseClicked
+        // TODO add your handling code here:
+        new ProvideFeedbackandViewRatings().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnprovideFeedbackMouseClicked
 
     /**
      * @param args the command line arguments

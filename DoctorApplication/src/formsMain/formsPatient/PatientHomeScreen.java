@@ -5,6 +5,8 @@
  */
 package formsMain.formsPatient;
 
+import formsMain.HomeScreen;
+
 /**
  *
  * @author Zack
@@ -34,9 +36,6 @@ public class PatientHomeScreen extends javax.swing.JFrame {
         btnlogoff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnviewApp = new javax.swing.JButton();
-        btnviewHis = new javax.swing.JButton();
-        btnviewPresc = new javax.swing.JButton();
-        btnviewRating = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,16 +72,20 @@ public class PatientHomeScreen extends javax.swing.JFrame {
         );
 
         btnlogoff.setText("Log off");
+        btnlogoff.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnlogoffMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("Home screen");
 
-        btnviewApp.setText("View appointments");
-
-        btnviewHis.setText("View history");
-
-        btnviewPresc.setText("View prescription");
-
-        btnviewRating.setText("View doctor ratings");
+        btnviewApp.setText("View information");
+        btnviewApp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnviewAppMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,11 +98,8 @@ public class PatientHomeScreen extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(btnviewApp)
-                            .addComponent(btnviewHis)
-                            .addComponent(btnviewPresc)
-                            .addComponent(btnviewRating))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(btnviewApp))
+                        .addGap(0, 269, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnlogoff)))
@@ -113,20 +113,26 @@ public class PatientHomeScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnviewApp)
-                .addGap(18, 18, 18)
-                .addComponent(btnviewHis)
-                .addGap(18, 18, 18)
-                .addComponent(btnviewPresc)
-                .addGap(18, 18, 18)
-                .addComponent(btnviewRating)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnviewApp, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addComponent(btnlogoff)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnlogoffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlogoffMouseClicked
+        // TODO add your handling code here:
+        new HomeScreen().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnlogoffMouseClicked
+
+    private void btnviewAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnviewAppMouseClicked
+        // TODO add your handling code here:
+        new ViewInfo().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnviewAppMouseClicked
 
     /**
      * @param args the command line arguments
@@ -169,9 +175,6 @@ public class PatientHomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnreqAccTermination;
     private javax.swing.JButton btnreqAppointment;
     private javax.swing.JButton btnviewApp;
-    private javax.swing.JButton btnviewHis;
-    private javax.swing.JButton btnviewPresc;
-    private javax.swing.JButton btnviewRating;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

@@ -5,6 +5,12 @@
  */
 package formsMain.formsPatient;
 
+import Users.userPaitent.ViewAppointments;
+import Users.userPaitent.ViewHistory;
+import Users.userPaitent.ViewPrescription;
+
+
+
 /**
  *
  * @author Zack
@@ -30,32 +36,42 @@ public class ViewInfo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtVPrescriptions = new javax.swing.JTextArea();
+        txbxvPrescriptions = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtVAppointments = new javax.swing.JTextArea();
+        txbxvAppointments = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txtVHistory = new javax.swing.JTextArea();
+        txbxvHistory = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnback1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jLabel1.setText("View information about you");
 
         jLabel2.setText("Appointments");
 
-        txtVPrescriptions.setColumns(20);
-        txtVPrescriptions.setRows(5);
-        jScrollPane1.setViewportView(txtVPrescriptions);
+        txbxvPrescriptions.setColumns(20);
+        txbxvPrescriptions.setRows(5);
+        jScrollPane1.setViewportView(txbxvPrescriptions);
 
-        txtVAppointments.setColumns(20);
-        txtVAppointments.setRows(5);
-        jScrollPane2.setViewportView(txtVAppointments);
+        txbxvAppointments.setColumns(20);
+        txbxvAppointments.setRows(5);
+        txbxvAppointments.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                txbxvAppointmentsComponentShown(evt);
+            }
+        });
+        jScrollPane2.setViewportView(txbxvAppointments);
 
-        txtVHistory.setColumns(20);
-        txtVHistory.setRows(5);
-        jScrollPane3.setViewportView(txtVHistory);
+        txbxvHistory.setColumns(20);
+        txbxvHistory.setRows(5);
+        jScrollPane3.setViewportView(txbxvHistory);
 
         jLabel3.setText("History");
 
@@ -136,6 +152,25 @@ public class ViewInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnback1ActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        ViewAppointments r = new ViewAppointments();
+        String appointment = r.GetAppointment();
+        txbxvAppointments.setText(appointment);
+        
+        ViewHistory y = new ViewHistory();
+        String history = y.GetHistory();
+        txbxvHistory.setText(history);
+        
+        ViewPrescription z = new ViewPrescription();
+        String prescription = z.getPrescription();
+        txbxvPrescriptions.setText(prescription);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void txbxvAppointmentsComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txbxvAppointmentsComponentShown
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txbxvAppointmentsComponentShown
+
     /**
      * @param args the command line arguments
      */
@@ -181,8 +216,8 @@ public class ViewInfo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea txtVAppointments;
-    private javax.swing.JTextArea txtVHistory;
-    private javax.swing.JTextArea txtVPrescriptions;
+    private javax.swing.JTextArea txbxvAppointments;
+    private javax.swing.JTextArea txbxvHistory;
+    private javax.swing.JTextArea txbxvPrescriptions;
     // End of variables declaration//GEN-END:variables
 }

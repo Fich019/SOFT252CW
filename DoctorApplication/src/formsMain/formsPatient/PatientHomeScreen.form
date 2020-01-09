@@ -31,11 +31,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnviewApp" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnviewHis" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnviewPresc" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnviewRating" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="269" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -54,14 +51,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnviewApp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnviewHis" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnviewPresc" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnviewRating" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnviewApp" min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace pref="105" max="32767" attributes="0"/>
               <Component id="btnlogoff" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -128,6 +119,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Log off"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnlogoffMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -136,23 +130,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnviewApp">
       <Properties>
-        <Property name="text" type="java.lang.String" value="View appointments"/>
+        <Property name="text" type="java.lang.String" value="View information"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnviewHis">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View history"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnviewPresc">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View prescription"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnviewRating">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View doctor ratings"/>
-      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnviewAppMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
