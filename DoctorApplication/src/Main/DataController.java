@@ -7,6 +7,7 @@ package Main;
 
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import org.json.simple.JSONArray;
@@ -38,6 +39,22 @@ public class DataController {
         }catch (IOException e){
             e.printStackTrace();
         }catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return jsonArray;
+    }
+    
+    public static JSONArray WriteToFile(JSONArray array){
+        
+        JSONArray jsonArray = array;
+        
+        try (FileWriter file = new FileWriter("C:\\Users\\Zack\\Documents\\GitHub\\SOFT252CW\\DoctorApplication\\data\\dataJSON.json")){
+            //file.flush();
+            file.write(jsonArray.toJSONString());
+            file.flush();
+            
+        }
+        catch(IOException e){
             e.printStackTrace();
         }
         return jsonArray;

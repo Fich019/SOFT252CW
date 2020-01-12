@@ -102,6 +102,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Give feedback"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btngiveFeedbackMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnreqAccTermination">
           <Properties>

@@ -9,6 +9,7 @@
         "id": "P0001",
         "age": "32"
       },
+
       {
         "password": "a",
         "address": "25, DT92YT",
@@ -109,21 +110,6 @@
         "notes": "Test 5",
         "doctorid": "D0003",
         "rating": "1"
-      },
-      {
-        "notes": "s",
-        "doctorid": "D0002",
-        "rating": "3"
-      },
-      {
-        "notes": "asdasd",
-        "doctorid": "D0001",
-        "rating": "5"
-      },
-      {
-        "notes": "asdasd",
-        "doctorid": "D0003",
-        "rating": "2"
       }
     ]
   },
@@ -146,19 +132,19 @@
   {
     "appointments": [
       {
-        "date": "05\/08\/2020",
+        "date": "05/08/2020",
         "attended": "false",
         "doctorid": "D0001",
         "patientid": "P0001"
       },
       {
-        "date": "11\/07\/2018",
+        "date": "11/07/2018",
         "attended": "true",
         "doctorid": "D0002",
         "patientid": "P0001"
       },
       {
-        "date": "02\/12\/2007",
+        "date": "02/12/2007",
         "attended": "true",
         "doctorid": "D0003",
         "patientid": "P0002"
@@ -300,4 +286,5 @@
       }
     ]
   }
+
 ]

@@ -42,6 +42,11 @@ public class PatientHomeScreen extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btngiveFeedback.setText("Give feedback");
+        btngiveFeedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btngiveFeedbackMouseClicked(evt);
+            }
+        });
 
         btnreqAccTermination.setText("Request account termination");
 
@@ -133,6 +138,12 @@ public class PatientHomeScreen extends javax.swing.JFrame {
         new ViewInfo().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnviewAppMouseClicked
+
+    private void btngiveFeedbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btngiveFeedbackMouseClicked
+        // TODO add your handling code here:
+        new FGiveFeedback().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btngiveFeedbackMouseClicked
 
     /**
      * @param args the command line arguments
