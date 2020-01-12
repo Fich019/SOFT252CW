@@ -9,7 +9,7 @@
         "id": "P0001",
         "age": "32"
       },
-      
+
       {
         "password": "a",
         "address": "25, DT92YT",
@@ -43,7 +43,7 @@
     ]
   },
   {
-    "administrators": [
+    "admins": [
       {
         "password": "a",
         "address": "12, BF82WR",
@@ -188,104 +188,103 @@
       },
       {
         "quantity": "16",
-        "name":  "Vicodin"
+        "name": "Vicodin"
       }
     ]
   },
-  [
-    {
-      "notes": "Excellent service, prescribed exactly what I needed",
-      "doctorid": "D0001",
-      "rating": "5"
-    },
-    {
-      "notes": "Average service",
-      "rating": "3",
-      "docterid": "D0002"
-    },
-    {
-      "notes": "Test 3",
-      "doctorid": "D0001",
-      "rating": "1"
-    },
-    {
-      "notes": "Test 4",
-      "doctorid": "D0002",
-      "rating": "3"
-    },
-    {
-      "notes": "Test 5",
-      "doctorid": "D0003",
-      "rating": "2"
-    }
-  ],
-  [
-    {
-      "notes": "Excellent service",
-      "doctorid": "D0001",
-      "rating": "5"
-    },
-    {
-      "notes": "Average service",
-      "rating": "3",
-      "docterid": "D0002"
-    },
-    {
-      "notes": "Test 3",
-      "doctorid": "D0001",
-      "rating": "1"
-    },
-    {
-      "notes": "Test 4",
-      "doctorid": "D0001",
-      "rating": "2"
-    },
-    {
-      "notes": "Test 5",
-      "doctorid": "D0002",
-      "rating": "3"
-    },
-    {
-      "notes": "Test 6",
-      "doctorid": "D0003",
-      "rating": "3"
-    }
-  ],
-  [
-    {
-      "notes": "Excellent service",
-      "doctorid": "D0001",
-      "rating": "5"
-    },
-    {
-      "notes": "Average service",
-      "rating": "3",
-      "docterid": "D0002"
-    },
-    {
-      "notes": "Test 3",
-      "doctorid": "D0001",
-      "rating": "1"
-    },
-    {
-      "notes": "Test 4",
-      "doctorid": "D0002",
-      "rating": "3"
-    },
-    {
-      "notes": "Test 5",
-      "doctorid": "D0002",
-      "rating": "4"
-    },
-    {
-      "notes": "Test 6",
-      "doctorid": "D0003",
-      "rating": "3"
-    },
-    {
-      "notes": "Test 7",
-      "doctorid": "D0003",
-      "rating": "2"
-    }
-  ]
+  {
+    "Notes": [
+      {
+        "notes": "Excellent service, prescribed exactly what I needed",
+        "doctorid": "D0001",
+        "rating": "5"
+      },
+      {
+        "notes": "Average service",
+        "rating": "3",
+        "docterid": "D0002"
+      },
+      {
+        "notes": "Test 3",
+        "doctorid": "D0001",
+        "rating": "1"
+      },
+      {
+        "notes": "Test 4",
+        "doctorid": "D0002",
+        "rating": "3"
+      },
+      {
+        "notes": "Test 5",
+        "doctorid": "D0003",
+        "rating": "2"
+      },
+      {
+        "notes": "Excellent service",
+        "doctorid": "D0001",
+        "rating": "5"
+      },
+      {
+        "notes": "Average service",
+        "rating": "3",
+        "docterid": "D0002"
+      },
+      {
+        "notes": "Test 3",
+        "doctorid": "D0001",
+        "rating": "1"
+      },
+      {
+        "notes": "Test 4",
+        "doctorid": "D0001",
+        "rating": "2"
+      },
+      {
+        "notes": "Test 5",
+        "doctorid": "D0002",
+        "rating": "3"
+      },
+      {
+        "notes": "Test 6",
+        "doctorid": "D0003",
+        "rating": "3"
+      },
+      {
+        "notes": "Excellent service",
+        "doctorid": "D0001",
+        "rating": "5"
+      },
+      {
+        "notes": "Average service",
+        "rating": "3",
+        "docterid": "D0002"
+      },
+      {
+        "notes": "Test 3",
+        "doctorid": "D0001",
+        "rating": "1"
+      },
+      {
+        "notes": "Test 4",
+        "doctorid": "D0002",
+        "rating": "3"
+      },
+      {
+        "notes": "Test 5",
+        "doctorid": "D0002",
+        "rating": "4"
+      },
+      {
+        "notes": "Test 6",
+        "doctorid": "D0003",
+        "rating": "3"
+      },
+      {
+        "notes": "Test 7",
+        "doctorid": "D0003",
+        "rating": "2"
+      }
+    ]
+  }
+
 ]

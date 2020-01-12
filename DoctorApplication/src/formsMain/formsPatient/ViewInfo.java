@@ -154,17 +154,17 @@ public class ViewInfo extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        ViewAppointments r = new ViewAppointments();
-        String appointment = r.GetAppointment();
-        txbxvAppointments.setText(appointment);
-        
-        ViewHistory y = new ViewHistory();
-        String history = y.GetHistory();
-        txbxvHistory.setText(history);
-        
-        ViewPrescription z = new ViewPrescription();
-        String prescription = z.getPrescription();
-        txbxvPrescriptions.setText(prescription);
+//        ViewAppointments r = new ViewAppointments();
+//        String appointment = r.GetAppointment();
+//        txbxvAppointments.setText(appointment);
+//        
+//        ViewHistory y = new ViewHistory();
+//        String history = y.GetHistory();
+//        txbxvHistory.setText(history);
+//        
+//        ViewPrescription z = new ViewPrescription();
+//        String prescription = z.getPrescription();
+//        txbxvPrescriptions.setText(prescription);
     }//GEN-LAST:event_formWindowActivated
 
     private void txbxvAppointmentsComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txbxvAppointmentsComponentShown
