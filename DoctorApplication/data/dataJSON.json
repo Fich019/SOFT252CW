@@ -132,13 +132,13 @@
   {
     "appointments": [
       {
-        "date": "05/08/2018",
+        "date": "05/08/2020",
         "attended": "false",
         "doctorid": "D0001",
         "patientid": "P0001"
       },
       {
-        "date": "11/07/2020",
+        "date": "11/07/2018",
         "attended": "true",
         "doctorid": "D0002",
         "patientid": "P0001"

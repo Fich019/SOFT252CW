@@ -8,8 +8,8 @@ package Users.userPaitent;
 import Main.DataController;
 import Users.PatientUser;
 import java.util.Objects;
-//import org.json.JSONArray;
-//import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -20,41 +20,49 @@ public class ViewAppointments {
     private String patientID;
     private String date;
     
-//    public String GetAppointment(){
-//        String appString = "";
-//        String data = DataController.getJSONData();
-//        JSONArray array = new JSONArray(data);
-//
-//        String patientID = PatientUser.userID;
-//        
-//        //Using the same code to import the data into an JSON object, I am using
-//        //it again to check through the array for appointments.
-//        for (int i = 0; i < data.length(); i++){
-//            try {
-//                JSONObject curItem = array.getJSONObject(i);
-//                JSONArray appointments = curItem.getJSONArray("appointments");
-//                for (int j = 0; j < appointments.length(); j++){
-//                    var currentApp = appointments.getJSONObject(j);
-//                    String attended = currentApp.getString("attended");
-//                    if (Objects.equals(attended, "false")){
-//                        String patId = currentApp.getString("patientid");
-//
-//                        if(Objects.equals(patId, patientID)){
-//                            doctorID = currentApp.getString("doctorid");
-//                            patientID = currentApp.getString("patientid");
-//                            date = currentApp.getString("date");
-//                            appString += ("Doctor: "+doctorID+"\n To see: "+patientID+"\n On date: "+date+" \n\n");
-//                        }
-//                    }
-//                }
-//            }
-//            catch(Exception e){
-//                continue;
-//            }
-//        }
-//        System.out.println("Returned string: "+appString);
-//        return appString;
-//    }
+    public String GetAppointment(){
+        String userID = PatientUser.userID;
+        String appointmentStr = "";
+        
+        JSONArray jsonArray = DataController.getJSONData();
+        
+        for (int i = 0; i < jsonArray.size(); i++){
+                   
+            try{
+                JSONObject curUser = (JSONObject) jsonArray.get(i);
+                JSONArray appointments = (JSONArray) curUser.get("appointments");
+                
+                //System.out.println(appointments);
+            
+                for (int j = 0; j < appointments.size(); j++){
+                    var currentApp = (JSONObject) appointments.get(j);
+                    //System.out.println(currentApp);
+                    String attended = (String) currentApp.get("attended");
+                    
+                    if (Objects.equals(attended, "false")){
+                        
+                        String patID = (String) currentApp.get("patientid");
+                        //System.out.println(currentApp);
+                        
+                        if(Objects.equals(patID, userID)){
+                            doctorID = (String) currentApp.get("doctorid");
+                            patientID = (String) currentApp.get("patientid");
+                            date = (String) currentApp.get("date");
+                            appointmentStr += ("Doctor: "+doctorID+"\n Will see: "+patientID+"\n On date: "+date+" \n\n");
+                            
+                        }
+                    }
+                }
+                     
+            }
+            catch(Exception e){
+                continue;
+            }            
+                    
+        }
+        //System.out.println("Returned string: "+appointmentStr);
+        return appointmentStr;
+    }
     
 
 }

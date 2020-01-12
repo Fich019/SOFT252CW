@@ -5,17 +5,11 @@
  */
 package Main;
 
-import Users.PatientUser;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.util.Iterator;
-import java.util.Objects;
-import org.json.simple.JSONArray;
+//import Users.PatientUser;
+//import java.util.Objects;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+//import org.json.simple.JSONArray;
+//import org.json.simple.JSONObject;
 
 /**
  *
@@ -23,15 +17,20 @@ import org.json.simple.parser.ParseException;
  */
 public class DoctorApplication {
 
-  
+//    private static String id = "P0001";
+//    private static String password;
+//    private static String name;
+//    private static String address;
+//    private static String age;
+//    private static String gender;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         
-        //JSONArray jsonArray = DataController.getJSONData();
-        
+//        JSONArray jsonArray = DataController.getJSONData();
+//        
 //        if (id.charAt(0) == 'P'){
 //                
 //                for (int i = 0; i < jsonArray.size(); i++){
