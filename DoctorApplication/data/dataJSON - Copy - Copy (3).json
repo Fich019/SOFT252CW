@@ -7,16 +7,26 @@
         "gender": "Male",
         "name": "John Smith",
         "id": "P0001",
-        "age": "32"
+        "age": "32",
+        "remove": false
       },
-
       {
         "password": "a",
         "address": "25, DT92YT",
         "gender": "Female",
         "name": "Sarah Sing",
         "id": "P0002",
-        "age": "16"
+        "age": "16",
+        "remove": false
+      },
+      {
+        "password": "a",
+        "address": "4 plym street,\nPL4 8NS",
+        "gender": "male",
+        "name": "add test",
+        "id": "P0007",
+        "age": "21",
+        "remove": false
       }
     ]
   },
@@ -132,19 +142,19 @@
   {
     "appointments": [
       {
-        "date": "05/08/2020",
+        "date": "05\/08\/2020",
         "attended": "false",
         "doctorid": "D0001",
         "patientid": "P0001"
       },
       {
-        "date": "11/07/2018",
+        "date": "11\/07\/2018",
         "attended": "true",
         "doctorid": "D0002",
         "patientid": "P0001"
       },
       {
-        "date": "02/12/2007",
+        "date": "02\/12\/2007",
         "attended": "true",
         "doctorid": "D0003",
         "patientid": "P0002"
@@ -286,5 +296,4 @@
       }
     ]
   }
-
 ]

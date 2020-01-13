@@ -5,6 +5,8 @@
  */
 package formsMain.formsSecretary;
 
+import formsMain.HomeScreen;
+
 /**
  *
  * @author Zack
@@ -27,21 +29,120 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnappDenyRequest = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnapproveApp = new javax.swing.JButton();
+        btngiveMeds = new javax.swing.JButton();
+        btnappRemovalReq = new javax.swing.JButton();
+        btnlogoff1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnappDenyRequest.setText("Approve / Deny Patient account requests");
+        btnappDenyRequest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnappDenyRequestMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("Secretary HomeScreen");
+
+        btnapproveApp.setText("Approve appointment");
+        btnapproveApp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnapproveAppMouseClicked(evt);
+            }
+        });
+
+        btngiveMeds.setText("Give medicine to Patient");
+        btngiveMeds.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btngiveMedsMouseClicked(evt);
+            }
+        });
+
+        btnappRemovalReq.setText("Approve Patient account removal");
+        btnappRemovalReq.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnappRemovalReqMouseClicked(evt);
+            }
+        });
+
+        btnlogoff1.setText("Log off");
+        btnlogoff1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnlogoff1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnappDenyRequest)
+                    .addComponent(btnappRemovalReq)
+                    .addComponent(btnapproveApp)
+                    .addComponent(btngiveMeds))
+                .addContainerGap(159, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnlogoff1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addComponent(btnappDenyRequest)
+                .addGap(18, 18, 18)
+                .addComponent(btnappRemovalReq)
+                .addGap(18, 18, 18)
+                .addComponent(btnapproveApp)
+                .addGap(18, 18, 18)
+                .addComponent(btngiveMeds)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(btnlogoff1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnlogoff1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlogoff1MouseClicked
+        // TODO add your handling code here:
+        new HomeScreen().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnlogoff1MouseClicked
+
+    private void btnappDenyRequestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnappDenyRequestMouseClicked
+        // TODO add your handling code here:
+        new ApprovePatientAccounts().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnappDenyRequestMouseClicked
+
+    private void btnappRemovalReqMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnappRemovalReqMouseClicked
+        // TODO add your handling code here:
+        new ApprovePatientAccountRemovalRequests().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnappRemovalReqMouseClicked
+
+    private void btnapproveAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnapproveAppMouseClicked
+        // TODO add your handling code here:
+        new FCreateAppointment().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnapproveAppMouseClicked
+
+    private void btngiveMedsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btngiveMedsMouseClicked
+        // TODO add your handling code here:
+        new GiveMeds().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btngiveMedsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +180,11 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnappDenyRequest;
+    private javax.swing.JButton btnappRemovalReq;
+    private javax.swing.JButton btnapproveApp;
+    private javax.swing.JButton btngiveMeds;
+    private javax.swing.JButton btnlogoff1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

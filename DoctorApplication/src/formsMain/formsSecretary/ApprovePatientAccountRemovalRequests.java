@@ -5,6 +5,11 @@
  */
 package formsMain.formsSecretary;
 
+import Users.userSecretary.RemoveAccount;
+import Users.userSecretary.ViewDeleteUser;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zack
@@ -32,27 +37,48 @@ public class ApprovePatientAccountRemovalRequests extends javax.swing.JFrame {
         btnapprove = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
         lblPatientID = new javax.swing.JLabel();
-        btndeny = new javax.swing.JButton();
-        txtPatientID = new javax.swing.JTextField();
+        btnback = new javax.swing.JButton();
+        cmbxpatientIDs = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         txbxpatientAcc.setColumns(20);
         txbxpatientAcc.setRows(5);
         jScrollPane2.setViewportView(txbxpatientAcc);
 
         btnapprove.setText("Approve");
+        btnapprove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnapproveMouseClicked(evt);
+            }
+        });
         btnapprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnapproveActionPerformed(evt);
             }
         });
 
-        lblTitle.setText("Approve Account Creation");
+        lblTitle.setText("Approve Account removal");
 
         lblPatientID.setText("Patient ID: ");
 
-        btndeny.setText("Deny");
+        btnback.setText("Back");
+        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnbackMouseClicked(evt);
+            }
+        });
+
+        cmbxpatientIDs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbxpatientIDsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,37 +94,34 @@ public class ApprovePatientAccountRemovalRequests extends javax.swing.JFrame {
                                 .addComponent(btnapprove))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblTitle)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnback)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblPatientID)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(cmbxpatientIDs, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btndeny)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitle)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTitle)
+                    .addComponent(btnback))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPatientID)
-                    .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbxpatientIDs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 112, Short.MAX_VALUE))
+                .addGap(18, 101, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btndeny)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnapprove)
                 .addContainerGap())
         );
@@ -109,6 +132,43 @@ public class ApprovePatientAccountRemovalRequests extends javax.swing.JFrame {
     private void btnapproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnapproveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnapproveActionPerformed
+
+    private void btnbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbackMouseClicked
+        // TODO add your handling code here:
+        new SecretaryHomeScreen().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnbackMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        RemoveAccount r = new RemoveAccount();
+        ArrayList<String> assign = new ArrayList<String>();
+        assign = r.GetRemovePatients();
+        
+        for (int i = 0; i < assign.size(); i++){
+            cmbxpatientIDs.addItem(assign.get(i));
+        }
+        
+        ViewDeleteUser v = new ViewDeleteUser();
+        String userdata = v.getSelectedUser(cmbxpatientIDs.getSelectedItem().toString());
+        txbxpatientAcc.setText(userdata);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void cmbxpatientIDsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxpatientIDsActionPerformed
+        // TODO add your handling code here:
+        ViewDeleteUser v = new ViewDeleteUser();
+        String userdata = v.getSelectedUser(cmbxpatientIDs.getSelectedItem().toString());
+        txbxpatientAcc.setText(userdata);
+    }//GEN-LAST:event_cmbxpatientIDsActionPerformed
+
+    private void btnapproveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnapproveMouseClicked
+        // TODO add your handling code here:
+        String userID = cmbxpatientIDs.getSelectedItem().toString();
+        RemoveAccount r = new RemoveAccount();
+        r.removeAccount(userID);
+        
+        JOptionPane.showMessageDialog(null, "Account successfully deleted!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnapproveMouseClicked
 
     /**
      * @param args the command line arguments
@@ -147,11 +207,11 @@ public class ApprovePatientAccountRemovalRequests extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnapprove;
-    private javax.swing.JButton btndeny;
+    private javax.swing.JButton btnback;
+    private javax.swing.JComboBox<String> cmbxpatientIDs;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblPatientID;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextArea txbxpatientAcc;
-    private javax.swing.JTextField txtPatientID;
     // End of variables declaration//GEN-END:variables
 }

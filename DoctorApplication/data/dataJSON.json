@@ -8,7 +8,7 @@
         "name": "John Smith",
         "id": "P0001",
         "age": "32",
-        "remove": true
+        "remove": false
       },
       {
         "password": "a",
@@ -21,11 +21,11 @@
       },
       {
         "password": "a",
-        "address": "25, DT92YT",
-        "gender": "Female",
-        "name": "Jan Jopp",
-        "id": "P0003",
-        "age": "65",
+        "address": "4 plym street,\nPL4 8NS",
+        "gender": "male",
+        "name": "add test",
+        "id": "P0007",
+        "age": "21",
         "remove": false
       }
     ]
@@ -120,21 +120,22 @@
         "notes": "Test 5",
         "doctorid": "D0003",
         "rating": "1"
+      }
+    ]
+  },
+  {
+    "accountrequest": [
+      {
+        "requesttype": "Delete",
+        "id": "P0010"
       },
       {
-        "notes": "s",
-        "doctorid": "D0002",
-        "rating": "3"
-      },
-      {
-        "notes": "asdasd",
-        "doctorid": "D0001",
-        "rating": "5"
-      },
-      {
-        "notes": "asdasd",
-        "doctorid": "D0003",
-        "rating": "2"
+        "password": "a",
+        "requesttype": "Create",
+        "address": "15, SI97DA",
+        "gender": "male",
+        "name": "James Wilson",
+        "age": "42"
       }
     ]
   },
@@ -142,19 +143,19 @@
     "appointments": [
       {
         "date": "05\/08\/2020",
-        "attended": false,
+        "attended": "false",
         "doctorid": "D0001",
         "patientid": "P0001"
       },
       {
         "date": "11\/07\/2018",
-        "attended": true,
+        "attended": "true",
         "doctorid": "D0002",
         "patientid": "P0001"
       },
       {
         "date": "02\/12\/2007",
-        "attended": true,
+        "attended": "true",
         "doctorid": "D0003",
         "patientid": "P0002"
       }

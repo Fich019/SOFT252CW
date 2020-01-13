@@ -40,7 +40,7 @@ public class RequestAccount {
             
             try{
             JSONObject tempUser = (JSONObject) tempArray.get(i);
-            tempAcc = (JSONArray) tempUser.get("tempPatients");
+            tempAcc = (JSONArray) tempUser.get("patients");
                 
             count += tempAcc.size();
                 

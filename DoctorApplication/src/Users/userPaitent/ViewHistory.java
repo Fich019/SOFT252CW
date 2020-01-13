@@ -40,7 +40,7 @@ public class ViewHistory {
                     //System.out.println(currentApp);
                     String attended = (String) currentApp.get("attended");
                     
-                    if (Objects.equals(attended, true)){
+                    if (Objects.equals(attended, "true")){
                         
                         String patID = (String) currentApp.get("patientid");
                         //System.out.println(currentApp);

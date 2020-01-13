@@ -9,12 +9,12 @@ package formsMain.formsSecretary;
  *
  * @author Zack
  */
-public class CreateFreeDoctorAppointment extends javax.swing.JFrame {
+public class FCreateAppointment extends javax.swing.JFrame {
 
     /**
      * Creates new form CreateFreeDoctorAppointment
      */
-    public CreateFreeDoctorAppointment() {
+    public FCreateAppointment() {
         initComponents();
     }
 
@@ -28,43 +28,42 @@ public class CreateFreeDoctorAppointment extends javax.swing.JFrame {
     private void initComponents() {
 
         lblAppTime = new javax.swing.JLabel();
-        cmbxdocName = new javax.swing.JComboBox<>();
-        cmbxappTime = new javax.swing.JComboBox<>();
+        cmbxdoctorID = new javax.swing.JComboBox<>();
         lblFormTitle = new javax.swing.JLabel();
         lblPatientName = new javax.swing.JLabel();
-        txtpatientName = new javax.swing.JTextField();
         lblDocName = new javax.swing.JLabel();
         btncreateApp = new javax.swing.JButton();
+        btnback = new javax.swing.JButton();
+        cmbxpatientID = new javax.swing.JComboBox<>();
+        txtdate = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblAppTime.setText("Select Time:");
+        lblAppTime.setText("Select date:");
 
-        cmbxdocName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cmbxdocName.addActionListener(new java.awt.event.ActionListener() {
+        cmbxdoctorID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbxdocNameActionPerformed(evt);
+                cmbxdoctorIDActionPerformed(evt);
             }
         });
-
-        cmbxappTime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblFormTitle.setText("Create Appointment");
 
         lblPatientName.setText("Patient ID:");
 
-        txtpatientName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpatientNameActionPerformed(evt);
-            }
-        });
-
-        lblDocName.setText("Doctor Name:");
+        lblDocName.setText("Doctor ID:");
 
         btncreateApp.setText("Create Appointment");
         btncreateApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncreateAppActionPerformed(evt);
+            }
+        });
+
+        btnback.setText("Back");
+        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnbackMouseClicked(evt);
             }
         });
 
@@ -80,42 +79,46 @@ public class CreateFreeDoctorAppointment extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblFormTitle)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDocName)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblDocName)
+                                    .addComponent(lblPatientName))
                                 .addGap(18, 18, 18)
-                                .addComponent(cmbxdocName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cmbxdoctorID, 0, 98, Short.MAX_VALUE)
+                                    .addComponent(txtdate)
+                                    .addComponent(cmbxpatientID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 212, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblPatientName)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtpatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 198, Short.MAX_VALUE)))
+                                .addComponent(lblFormTitle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnback)))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblAppTime)
-                .addGap(18, 18, 18)
-                .addComponent(cmbxappTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblFormTitle)
-                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtpatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPatientName))
+                    .addComponent(lblFormTitle)
+                    .addComponent(btnback))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPatientName)
+                    .addComponent(cmbxpatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbxdocName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbxdoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDocName))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAppTime)
-                    .addComponent(cmbxappTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                    .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(btncreateApp)
                 .addContainerGap())
         );
@@ -123,17 +126,19 @@ public class CreateFreeDoctorAppointment extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbxdocNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxdocNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbxdocNameActionPerformed
-
-    private void txtpatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpatientNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtpatientNameActionPerformed
-
     private void btncreateAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncreateAppActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btncreateAppActionPerformed
+
+    private void btnbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbackMouseClicked
+        // TODO add your handling code here:
+        new SecretaryHomeScreen().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnbackMouseClicked
+
+    private void cmbxdoctorIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxdoctorIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbxdoctorIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,32 +157,36 @@ public class CreateFreeDoctorAppointment extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateFreeDoctorAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FCreateAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateFreeDoctorAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FCreateAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateFreeDoctorAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FCreateAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateFreeDoctorAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FCreateAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateFreeDoctorAppointment().setVisible(true);
+                new FCreateAppointment().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnback;
     private javax.swing.JButton btncreateApp;
-    private javax.swing.JComboBox<String> cmbxappTime;
-    private javax.swing.JComboBox<String> cmbxdocName;
+    private javax.swing.JComboBox<String> cmbxdoctorID;
+    private javax.swing.JComboBox<String> cmbxpatientID;
     private javax.swing.JLabel lblAppTime;
     private javax.swing.JLabel lblDocName;
     private javax.swing.JLabel lblFormTitle;
     private javax.swing.JLabel lblPatientName;
-    private javax.swing.JTextField txtpatientName;
+    private javax.swing.JTextField txtdate;
     // End of variables declaration//GEN-END:variables
 }

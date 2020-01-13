@@ -25,11 +25,11 @@ public class RequestAppointment {
             
             try{
             JSONObject tempUser = (JSONObject) tempArray.get(i);
-            tempApp = (JSONArray) tempUser.get("tempAppointments");
+            tempApp = (JSONArray) tempUser.get("appointments");
             
             
             newAppointment.put("date", date);
-            newAppointment.put("attended", false);
+            newAppointment.put("attended", "false");
             newAppointment.put("doctorid", doctorID);
             newAppointment.put("patientid", patientID);
                
