@@ -124,22 +124,6 @@
     ]
   },
   {
-    "accountrequest": [
-      {
-        "requesttype": "Delete",
-        "id": "P0010"
-      },
-      {
-        "password": "a",
-        "requesttype": "Create",
-        "address": "15, SI97DA",
-        "gender": "male",
-        "name": "James Wilson",
-        "age": "42"
-      }
-    ]
-  },
-  {
     "appointments": [
       {
         "date": "05\/08\/2020",
@@ -164,6 +148,12 @@
         "attended": "false",
         "doctorid": "D0001",
         "patientid": "P0001"
+      },
+      {
+        "date": "02\/12\/2007",
+        "attended": "false",
+        "doctorid": "D0003",
+        "patientid": "P0002"
       }
     ]
   },

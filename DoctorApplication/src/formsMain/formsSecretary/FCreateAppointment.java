@@ -5,6 +5,10 @@
  */
 package formsMain.formsSecretary;
 
+import Users.userSecretary.CreateAppointment;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zack
@@ -38,8 +42,13 @@ public class FCreateAppointment extends javax.swing.JFrame {
         txtdate = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
-        lblAppTime.setText("Select date:");
+        lblAppTime.setText("Select date [dd/mm/yyyy]:");
 
         cmbxdoctorID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +63,11 @@ public class FCreateAppointment extends javax.swing.JFrame {
         lblDocName.setText("Doctor ID:");
 
         btncreateApp.setText("Create Appointment");
+        btncreateApp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncreateAppMouseClicked(evt);
+            }
+        });
         btncreateApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncreateAppActionPerformed(evt);
@@ -78,26 +92,26 @@ public class FCreateAppointment extends javax.swing.JFrame {
                         .addComponent(btncreateApp))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDocName)
-                                    .addComponent(lblPatientName))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cmbxdoctorID, 0, 98, Short.MAX_VALUE)
-                                    .addComponent(txtdate)
-                                    .addComponent(cmbxpatientID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 212, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblFormTitle)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnback)))))
+                        .addComponent(lblFormTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnback)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblAppTime)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblDocName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbxdoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblAppTime)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPatientName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbxpatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,6 +153,40 @@ public class FCreateAppointment extends javax.swing.JFrame {
     private void cmbxdoctorIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxdoctorIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbxdoctorIDActionPerformed
+
+    private void btncreateAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncreateAppMouseClicked
+        // TODO add your handling code here:
+        String date = txtdate.getText();
+        String doctorID = cmbxdoctorID.getSelectedItem().toString();
+        String patientID = cmbxpatientID.getSelectedItem().toString();
+        CreateAppointment c = new CreateAppointment();
+        c.AppendToFile(date, doctorID, patientID);
+        
+        JOptionPane.showMessageDialog(null, "Appointment sucessfully created!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        
+        new SecretaryHomeScreen().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btncreateAppMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        CreateAppointment g = new CreateAppointment();
+        ArrayList<String> assign = new ArrayList<String>();
+        assign = g.GetDoctorIDs();
+        
+        for (int i = 0; i < assign.size(); i++){
+            cmbxdoctorID.addItem(assign.get(i));
+        }
+        
+        CreateAppointment p = new CreateAppointment();
+        ArrayList<String> assign2 = new ArrayList<String>();
+        assign2 = p.GetPatientIDs();
+        
+        for (int i = 0; i < assign2.size(); i++){
+            cmbxpatientID.addItem(assign2.get(i));
+        }
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

@@ -36,6 +36,7 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
         btnappRemovalReq = new javax.swing.JButton();
         btnlogoff1 = new javax.swing.JButton();
         btncreateApp = new javax.swing.JButton();
+        btnremoveAcc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,13 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
             }
         });
 
+        btnremoveAcc.setText("Remove account");
+        btnremoveAcc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnremoveAccMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,7 +109,8 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
                             .addComponent(btngiveMeds)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(btncreateApp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnapproveApp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnapproveApp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnremoveAcc))
                         .addGap(0, 149, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -119,8 +128,10 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btncreateApp)
                 .addGap(18, 18, 18)
+                .addComponent(btnremoveAcc)
+                .addGap(18, 18, 18)
                 .addComponent(btngiveMeds)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btnlogoff1)
                 .addContainerGap())
         );
@@ -164,6 +175,12 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btncreateAppMouseClicked
 
+    private void btnremoveAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnremoveAccMouseClicked
+        // TODO add your handling code here:
+        new FRemoveAccount().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnremoveAccMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -206,6 +223,7 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton btncreateApp;
     private javax.swing.JButton btngiveMeds;
     private javax.swing.JButton btnlogoff1;
+    private javax.swing.JButton btnremoveAcc;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
