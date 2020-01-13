@@ -36,8 +36,6 @@ public class Login extends javax.swing.JFrame {
         lblPasswd = new javax.swing.JLabel();
         txtpassword = new javax.swing.JTextField();
         btnlogin = new javax.swing.JButton();
-        lblMakeAccount = new javax.swing.JLabel();
-        btnmakeAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,27 +55,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        lblMakeAccount.setText("No Login?");
-
-        btnmakeAccount.setText("Make Account");
-        btnmakeAccount.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnmakeAccountMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnlogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblMakeAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmakeAccount)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -88,6 +69,10 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(txtpassword)
                     .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(147, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnlogin)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,10 +86,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(lblPasswd)
                     .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnlogin)
-                    .addComponent(lblMakeAccount)
-                    .addComponent(btnmakeAccount))
+                .addComponent(btnlogin)
                 .addContainerGap())
         );
 
@@ -114,12 +96,6 @@ public class Login extends javax.swing.JFrame {
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
 
     }//GEN-LAST:event_btnloginActionPerformed
-
-    private void btnmakeAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnmakeAccountMouseClicked
-
-        new CreateAccount().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnmakeAccountMouseClicked
 
     private void btnloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnloginMouseClicked
         // TODO add your handling code here:
@@ -175,8 +151,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnlogin;
-    private javax.swing.JButton btnmakeAccount;
-    private javax.swing.JLabel lblMakeAccount;
     private javax.swing.JLabel lblPasswd;
     private javax.swing.JLabel lblUname;
     private javax.swing.JTextField txtpassword;

@@ -32,7 +32,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblConfirmPassword" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblDesiredUname" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblAge" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -42,10 +41,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtuserName" alignment="0" pref="245" max="32767" attributes="0"/>
-                          <Component id="txtconfirmPassword" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtpassword" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="txtsex" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtgender" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtage" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -77,24 +75,19 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtsex" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtgender" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblAddress" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="9" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblDesiredPasswd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtconfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblConfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtpassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="btnrequestAcc" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -102,12 +95,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblConfirmPassword">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirm Password :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtconfirmPassword">
+    <Component class="javax.swing.JTextField" name="txtpassword">
     </Component>
     <Component class="javax.swing.JLabel" name="lblAge">
       <Properties>
@@ -124,7 +112,7 @@
         <Property name="text" type="java.lang.String" value="Enter your Address :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtsex">
+    <Component class="javax.swing.JTextField" name="txtgender">
     </Component>
     <Component class="javax.swing.JButton" name="btnrequestAcc">
       <Properties>
@@ -166,8 +154,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Chose A Strong Password :"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtpassword">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

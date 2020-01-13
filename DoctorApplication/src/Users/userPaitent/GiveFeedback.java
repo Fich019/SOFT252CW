@@ -19,6 +19,28 @@ import org.json.simple.JSONObject;
  */
 public class GiveFeedback {
     
+    public ArrayList<String> GetDoctorIDs(){
+        ArrayList<String> docIDs = new ArrayList<String>();
+        
+        JSONArray jsonArray = DataController.getJSONData();
+        
+        for (int i = 0; i < jsonArray.size(); i++){
+            try{
+                JSONObject curUser = (JSONObject) jsonArray.get(i);
+                JSONArray doctors = (JSONArray) curUser.get("doctors");
+                
+                for (int j = 0; j < doctors.size(); j++){
+                    var currentDoc = (JSONObject) doctors.get(j);
+                    String docID = (String) currentDoc.get("id");
+                    docIDs.add(docID);
+                }
+            }
+            catch(Exception e){
+                continue;
+            }     
+        }
+        return docIDs;
+    }
     public void AppendToFile(String docID, String rating, String notes){
         
         JSONObject newFeedback = new JSONObject();
@@ -32,6 +54,7 @@ public class GiveFeedback {
             try{
                 JSONObject curUser = (JSONObject) jsonArray.get(i);
                 doctorFeedback = (JSONArray) curUser.get("docfeedback");
+                
                 
                 newFeedback.put("doctorid", docID);
                 newFeedback.put("rating", rating);

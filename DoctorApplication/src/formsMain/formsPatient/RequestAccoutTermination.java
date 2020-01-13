@@ -5,16 +5,20 @@
  */
 package formsMain.formsPatient;
 
+import Users.PatientUser;
+import Users.userPaitent.RequestAccountTermination;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zack
  */
-public class RequestAcccoutTermination extends javax.swing.JFrame {
+public class RequestAccoutTermination extends javax.swing.JFrame {
 
     /**
      * Creates new form RequestAcccoutTermination
      */
-    public RequestAcccoutTermination() {
+    public RequestAccoutTermination() {
         initComponents();
     }
 
@@ -28,19 +32,29 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
     private void initComponents() {
 
         txtpassword = new javax.swing.JTextField();
-        txtuserName = new javax.swing.JTextField();
         chxbxconfirmTerm = new javax.swing.JCheckBox();
         btnreqTermination = new javax.swing.JButton();
         btnback1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        lbuserID = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         chxbxconfirmTerm.setText("Are you sure you want to terminate your account?");
 
         btnreqTermination.setText("Request termination");
+        btnreqTermination.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnreqTerminationMouseClicked(evt);
+            }
+        });
 
         btnback1.setText("Back");
         btnback1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -51,9 +65,11 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
 
         jLabel1.setText("Request account termination");
 
-        jLabel2.setText("Username:");
+        jLabel2.setText("User ID");
 
         jLabel3.setText("Password:");
+
+        lbuserID.setText("aaaaaaa");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,16 +84,16 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnback1)
-                                .addContainerGap())))
+                                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbuserID)
+                                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 66, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,15 +111,15 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(btnback1))
-                .addGap(21, 21, 21)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbuserID))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(chxbxconfirmTerm)
                 .addGap(33, 33, 33)
                 .addComponent(btnreqTermination)
@@ -118,6 +134,27 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
         new PatientHomeScreen().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnback1MouseClicked
+
+    private void btnreqTerminationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnreqTerminationMouseClicked
+        // TODO add your handling code here:
+        
+        if (chxbxconfirmTerm.isSelected()){
+            String userID = lbuserID.getText();
+            String password = txtpassword.getText();
+            RequestAccountTermination r = new RequestAccountTermination();
+            r.DeleteAccount(userID, password);
+            
+            JOptionPane.showMessageDialog(null, "Account deletion requested!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Make sure to tick are you sure want to terminate your account", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnreqTerminationMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        lbuserID.setText(PatientUser.userID);
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -136,20 +173,21 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequestAcccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequestAccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequestAcccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequestAccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequestAcccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequestAccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequestAcccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequestAccoutTermination.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequestAcccoutTermination().setVisible(true);
+                new RequestAccoutTermination().setVisible(true);
             }
         });
     }
@@ -161,7 +199,7 @@ public class RequestAcccoutTermination extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lbuserID;
     private javax.swing.JTextField txtpassword;
-    private javax.swing.JTextField txtuserName;
     // End of variables declaration//GEN-END:variables
 }

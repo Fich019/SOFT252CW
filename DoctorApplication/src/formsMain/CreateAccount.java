@@ -5,9 +5,9 @@
  */
 package formsMain;
 
-import Main.DataController;
-import Users.PatientUser;
-import static Users.User.count;
+
+import Users.userPaitent.RequestAccount;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,12 +31,11 @@ public class CreateAccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblConfirmPassword = new javax.swing.JLabel();
-        txtconfirmPassword = new javax.swing.JTextField();
+        txtpassword = new javax.swing.JTextField();
         lblAge = new javax.swing.JLabel();
         txtage = new javax.swing.JTextField();
         lblAddress = new javax.swing.JLabel();
-        txtsex = new javax.swing.JTextField();
+        txtgender = new javax.swing.JTextField();
         btnrequestAcc = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,12 +43,9 @@ public class CreateAccount extends javax.swing.JFrame {
         lblDesiredUname = new javax.swing.JLabel();
         txtuserName = new javax.swing.JTextField();
         lblDesiredPasswd = new javax.swing.JLabel();
-        txtpassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lblConfirmPassword.setText("Confirm Password :");
 
         lblAge.setText("Enter your Age :");
 
@@ -97,7 +93,6 @@ public class CreateAccount extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblConfirmPassword)
                             .addComponent(lblDesiredUname)
                             .addComponent(lblAge)
                             .addComponent(jLabel1)
@@ -106,10 +101,9 @@ public class CreateAccount extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtuserName, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                            .addComponent(txtconfirmPassword)
                             .addComponent(txtpassword)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtsex)
+                            .addComponent(txtgender)
                             .addComponent(txtage))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -133,20 +127,16 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtsex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAddress)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDesiredPasswd)
-                    .addComponent(txtconfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblConfirmPassword)
                     .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(41, 41, 41)
                 .addComponent(btnrequestAcc)
                 .addContainerGap())
         );
@@ -159,7 +149,16 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtageActionPerformed
 
     private void btnrequestAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrequestAccMouseClicked
-        int ID = count.incrementAndGet();
+        //int ID = count.incrementAndGet();
+        String name = txtuserName.getText();
+        String age = txtage.getText();
+        String password = txtpassword.getText();
+        String address = txbxaddress.getText();
+        String gender = txtgender.getText();
+        RequestAccount r = new RequestAccount();
+        r.CreateNewAccount(password, address, gender, name, age);
+        
+        JOptionPane.showMessageDialog(null, "Account successfully requested!", "Success", JOptionPane.INFORMATION_MESSAGE);
         
 //        if (DataController.Users.isEmpty()){
 //            
@@ -227,14 +226,12 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblAge;
-    private javax.swing.JLabel lblConfirmPassword;
     private javax.swing.JLabel lblDesiredPasswd;
     private javax.swing.JLabel lblDesiredUname;
     private javax.swing.JTextArea txbxaddress;
     private javax.swing.JTextField txtage;
-    private javax.swing.JTextField txtconfirmPassword;
+    private javax.swing.JTextField txtgender;
     private javax.swing.JTextField txtpassword;
-    private javax.swing.JTextField txtsex;
     private javax.swing.JTextField txtuserName;
     // End of variables declaration//GEN-END:variables
 }

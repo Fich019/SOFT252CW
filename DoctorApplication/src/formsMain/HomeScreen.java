@@ -29,6 +29,8 @@ public class HomeScreen extends javax.swing.JFrame {
 
         lblTitle = new javax.swing.JLabel();
         btnlogin = new javax.swing.JButton();
+        btncreateAccount = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +43,15 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        btncreateAccount.setText("Create Account");
+        btncreateAccount.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncreateAccountMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("No account?");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -51,6 +62,12 @@ public class HomeScreen extends javax.swing.JFrame {
                     .addComponent(lblTitle)
                     .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(211, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btncreateAccount)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -59,7 +76,11 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addComponent(lblTitle)
                 .addGap(18, 18, 18)
                 .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btncreateAccount)
+                    .addComponent(jLabel1))
+                .addContainerGap())
         );
 
         pack();
@@ -69,6 +90,12 @@ public class HomeScreen extends javax.swing.JFrame {
         new Login().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnloginActionPerformed
+
+    private void btncreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncreateAccountMouseClicked
+        // TODO add your handling code here:
+        new CreateAccount().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btncreateAccountMouseClicked
 
     /**
      * @param args the command line arguments
@@ -106,7 +133,9 @@ public class HomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncreateAccount;
     private javax.swing.JButton btnlogin;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }

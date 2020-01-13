@@ -5,10 +5,44 @@
  */
 package Users.userPaitent;
 
+import Main.DataController;
+import java.util.Objects;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 /**
  *
  * @author Zack
  */
 public class RequestAccountTermination {
     
+    public void DeleteAccount(String userID, String password){
+        
+        JSONArray jsonArray = DataController.getJSONData();
+        
+        for (int i = 0; i < jsonArray.size(); i++){
+                   
+            try{
+                JSONObject curUser = (JSONObject) jsonArray.get(i);
+                JSONArray patients = (JSONArray) curUser.get("patients");
+            
+                for (int j = 0; j < patients.size(); j++){
+                    var currentPat = (JSONObject) patients.get(j);
+                    //System.out.println(currentPat);
+                    String patID = (String) currentPat.get("id");
+                    String patPass = (String) currentPat.get("password");
+                    
+                    if(Objects.equals(patID, userID) && Objects.equals(patPass, password)){
+                        currentPat.put("remove", true);
+                    }
+                            
+                }
+                     
+            }catch(Exception e){
+            continue;
+            }
+                    
+        }
+        DataController.WriteToFile(jsonArray);
+    }
 }

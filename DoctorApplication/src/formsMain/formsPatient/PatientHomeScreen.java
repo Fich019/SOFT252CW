@@ -5,6 +5,7 @@
  */
 package formsMain.formsPatient;
 
+import Users.PatientUser;
 import formsMain.HomeScreen;
 
 /**
@@ -49,8 +50,18 @@ public class PatientHomeScreen extends javax.swing.JFrame {
         });
 
         btnreqAccTermination.setText("Request account termination");
+        btnreqAccTermination.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnreqAccTerminationMouseClicked(evt);
+            }
+        });
 
         btnreqAppointment.setText("Request appointment");
+        btnreqAppointment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnreqAppointmentMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -140,10 +151,23 @@ public class PatientHomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnviewAppMouseClicked
 
     private void btngiveFeedbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btngiveFeedbackMouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here;
         new FGiveFeedback().setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_btngiveFeedbackMouseClicked
+
+    private void btnreqAccTerminationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnreqAccTerminationMouseClicked
+        // TODO add your handling code here:
+        new RequestAccoutTermination().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnreqAccTerminationMouseClicked
+
+    private void btnreqAppointmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnreqAppointmentMouseClicked
+        // TODO add your handling code here:
+        new AppointmentRequest().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnreqAppointmentMouseClicked
 
     /**
      * @param args the command line arguments

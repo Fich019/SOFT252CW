@@ -1,0 +1,50 @@
+[
+  {
+    "tempPatients": [
+      {
+        "password": "a",
+        "address": "16, PN38SF",
+        "gender": "Male",
+        "name": "Long Smith",
+        "id": "P0004",
+        "age": "35",
+        "remove": false
+      },
+      {
+        "password": "a",
+        "address": "25, DT92YT",
+        "gender": "Female",
+        "name": "Sarah Waggon",
+        "id": "P0005",
+        "age": "26",
+        "remove": false
+      },
+      {
+        "password": "a",
+        "address": "4 plym street,\nPL4 8NS",
+        "gender": "male",
+        "name": "Zack",
+        "id": "P0006",
+        "age": "21",
+        "remove": false
+      }
+    ]
+  },
+  {
+    "tempAppointments": [
+      {
+        "date": "05\/08\/2020",
+        "attended": false,
+        "doctorid": "D0001",
+        "patientid": "P0001"
+      },
+      {
+        "date": "02\/11\/2020",
+        "attended": false,
+        "doctorid": "D0002",
+        "patientid": "P0001"
+      }
+    ]
+  }
+
+]
