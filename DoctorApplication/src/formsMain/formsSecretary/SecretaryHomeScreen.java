@@ -35,6 +35,7 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
         btngiveMeds = new javax.swing.JButton();
         btnappRemovalReq = new javax.swing.JButton();
         btnlogoff1 = new javax.swing.JButton();
+        btncreateApp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,13 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
             }
         });
 
+        btncreateApp.setText("Create appointment");
+        btncreateApp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncreateAppMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,15 +90,19 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(btnappDenyRequest)
-                    .addComponent(btnappRemovalReq)
-                    .addComponent(btnapproveApp)
-                    .addComponent(btngiveMeds))
-                .addContainerGap(159, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnlogoff1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnlogoff1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(btnappDenyRequest)
+                            .addComponent(btnappRemovalReq)
+                            .addComponent(btngiveMeds)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btncreateApp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnapproveApp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 149, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -105,8 +117,10 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnapproveApp)
                 .addGap(18, 18, 18)
+                .addComponent(btncreateApp)
+                .addGap(18, 18, 18)
                 .addComponent(btngiveMeds)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(btnlogoff1)
                 .addContainerGap())
         );
@@ -134,7 +148,7 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
 
     private void btnapproveAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnapproveAppMouseClicked
         // TODO add your handling code here:
-        new FCreateAppointment().setVisible(true);
+        new FApproveAppointment().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnapproveAppMouseClicked
 
@@ -143,6 +157,12 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
         new GiveMeds().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btngiveMedsMouseClicked
+
+    private void btncreateAppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncreateAppMouseClicked
+        // TODO add your handling code here:
+        new FCreateAppointment().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btncreateAppMouseClicked
 
     /**
      * @param args the command line arguments
@@ -183,6 +203,7 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnappDenyRequest;
     private javax.swing.JButton btnappRemovalReq;
     private javax.swing.JButton btnapproveApp;
+    private javax.swing.JButton btncreateApp;
     private javax.swing.JButton btngiveMeds;
     private javax.swing.JButton btnlogoff1;
     private javax.swing.JLabel jLabel1;

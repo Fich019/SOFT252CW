@@ -192,6 +192,9 @@ public class ApprovePatientAccounts extends javax.swing.JFrame {
         a.RemoveTempAccount(userID);
         
         JOptionPane.showMessageDialog(null, "Account request denied!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        
+        new SecretaryHomeScreen().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btndenyMouseClicked
 
     private void btnapproveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnapproveMouseClicked
@@ -201,6 +204,9 @@ public class ApprovePatientAccounts extends javax.swing.JFrame {
         a.AddTempAccount(userID);
         
         JOptionPane.showMessageDialog(null, "Account request accepted!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        
+        new SecretaryHomeScreen().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnapproveMouseClicked
 
     /**

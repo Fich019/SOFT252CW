@@ -158,6 +158,12 @@
         "attended": "true",
         "doctorid": "D0003",
         "patientid": "P0002"
+      },
+      {
+        "date": "05\/08\/2020",
+        "attended": "false",
+        "doctorid": "D0001",
+        "patientid": "P0001"
       }
     ]
   },

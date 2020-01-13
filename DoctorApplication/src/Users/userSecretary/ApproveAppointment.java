@@ -17,43 +17,46 @@ import org.json.simple.JSONObject;
  */
 public class ApproveAppointment {
     
-    public ArrayList <String> GetTempPatientID(){
+    public ArrayList <String> GetAppointments(){
         
-        ArrayList<String> patIDs = new ArrayList<String>();
+        ArrayList<String> Apointments = new ArrayList<String>();
         
         JSONArray tempArray = DataController.getTEMPData();
         
         for (int i = 0; i < tempArray.size(); i++){
             try{
                 JSONObject curUser = (JSONObject) tempArray.get(i);
-                JSONArray tempPaients = (JSONArray) curUser.get("patients");
+                JSONArray appointments = (JSONArray) curUser.get("appointments");
                 
-                for (int j = 0; j < tempPaients.size(); j++){
-                    var currentPat = (JSONObject) tempPaients.get(j);
-                    String patID = (String) currentPat.get("id");
-                    patIDs.add(patID);
+                
+                for(int j = 0; j < appointments.size(); j++){
+                    var currentAppointment = (JSONObject) appointments.get(j);
+                    String date = (String) currentAppointment.get("date");
+                    Apointments.add(date);
+                    
                 }
+                
             }
             catch(Exception e){
                 continue;
             }     
         }
-        return patIDs;
+        return Apointments;
     }
     
-    public void RemoveTempAccount(String userID){
+    public void RemoveAppointment(String date){
         JSONArray tempArray = DataController.getTEMPData();
         
         for (int i = 0; i < tempArray.size(); i++){
             try{
                 JSONObject curUser = (JSONObject) tempArray.get(i);
-                JSONArray Patients = (JSONArray) curUser.get("patients");
+                JSONArray Appointments = (JSONArray) curUser.get("appointments");
                 
-                for (int j = 0; j < Patients.size(); j++){
-                    var currentPat = (JSONObject) Patients.get(j);
+                for (int j = 0; j < Appointments.size(); j++){
+                    var currentPat = (JSONObject) Appointments.get(j);
                     
-                    if (Objects.equals(currentPat.get("id"),userID)){
-                        Patients.remove(j);
+                    if (Objects.equals(currentPat.get("date"),date)){
+                        Appointments.remove(j);
                         
                     }
                 }
@@ -65,40 +68,40 @@ public class ApproveAppointment {
         DataController.WriteToTempFile(tempArray);
     }
     
-    public void AddTempAccount(String userID){
+    public void AddAppointment(String date){
         
         JSONArray jsonArray = DataController.getJSONData();
-        JSONObject approvedPat = GetPatient(userID);
+        JSONObject approvedPat = GetAppointment(date);
         
         for (int i = 0; i < jsonArray.size(); i++){
             try{
                 JSONObject curUser = (JSONObject) jsonArray.get(i);
-                JSONArray Patients = (JSONArray) curUser.get("patients");
+                JSONArray Appointments = (JSONArray) curUser.get("appointments");
                 
-                Patients.add(approvedPat);
+                Appointments.add(approvedPat);
             }
             catch(Exception e){
                 continue;
             }     
         }
         DataController.WriteToFile(jsonArray);
-        RemoveTempAccount(approvedPat.get("id").toString());
+        RemoveAppointment(approvedPat.get("date").toString());
     }
     
-    public JSONObject GetPatient(String userID){
-        JSONObject patientToApp = new JSONObject();
+    public JSONObject GetAppointment(String date){
+        JSONObject appointmentToApp = new JSONObject();
         JSONArray tempArray = DataController.getTEMPData();
         
         for (int i = 0; i < tempArray.size(); i++){
             try{
                 JSONObject curUser = (JSONObject) tempArray.get(i);
-                JSONArray tempPaients = (JSONArray) curUser.get("patients");
+                JSONArray tempAppointments = (JSONArray) curUser.get("appointments");
                 
-                for (int j = 0; j < tempPaients.size(); j++){
-                    var currentPat = (JSONObject) tempPaients.get(j);
+                for (int j = 0; j < tempAppointments.size(); j++){
+                    var currentApp = (JSONObject) tempAppointments.get(j);
                     
-                    if (Objects.equals(currentPat.get("id"),userID)){
-                        patientToApp = currentPat;
+                    if (Objects.equals(currentApp.get("date"),date)){
+                        appointmentToApp = currentApp;
                         
                     }
                 }
@@ -108,6 +111,6 @@ public class ApproveAppointment {
             }     
         }
         
-    return patientToApp;
+    return appointmentToApp;
     }
 }
