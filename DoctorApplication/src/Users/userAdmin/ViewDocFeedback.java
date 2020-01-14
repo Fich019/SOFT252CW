@@ -18,6 +18,8 @@ public class ViewDocFeedback {
     
     private String note;
     
+    //Gets the notes from the json object notes for the matching doctor
+    //and sends them to a form to be displayed to the current user.
     public String GetNotes(String docID){
         String notesStr = "";
         

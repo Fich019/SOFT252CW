@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
  */
 public class RemoveDoctor {
     
+    //Removes a doctor account from the json file.
     public void removeAccount(String name){
         JSONArray jsonArray = DataController.getJSONData();
         

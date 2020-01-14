@@ -17,6 +17,9 @@ import org.json.simple.JSONObject;
  */
 public class RemoveAccount {
     
+    
+    //Gets a list of patients with the remove bool equal to true. Returns
+    //the list to be given to a combo box.
     public ArrayList <String> GetRemovePatients(){
         
         ArrayList<String> removePats = new ArrayList<String>();
@@ -47,6 +50,8 @@ public class RemoveAccount {
     }
     
     
+    //Removes a patient from the main array if the ID matches a 
+    //given ID that has been passed into the method.
     public void removeAccount(String userID){
         JSONArray jsonArray = DataController.getJSONData();
         

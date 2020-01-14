@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class AddSecretary {
     
+    //Adds a new secretary to the main json data file.
     public void CreateNewSec(String password, String address, String name){
         
         int count = 0;

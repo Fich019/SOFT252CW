@@ -18,6 +18,8 @@ public class ViewDocRatings {
     
     private String rating;
     
+    //Does the same thing as ViewDocFeedback does for notes, but
+    //this does it for ratings of that particular doctor.
     public String GetRatings(String docID){
         String notesStr = "";
         

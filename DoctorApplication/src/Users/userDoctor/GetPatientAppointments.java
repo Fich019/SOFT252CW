@@ -19,6 +19,9 @@ public class GetPatientAppointments {
     
     private String note;
     
+    //Gets the appointment notes that match a certain date that has been
+    //passed though from a form. Returns the notes to be viewed by 
+    //the currently logged in user
     public String GetAppointments(String date){
         
         

@@ -21,6 +21,7 @@ public class ViewTempUsers {
     private String age;
     private String gender;
     
+    //View the data of a selected patient from the temp json file.
     public String getSelectedUser(String userID){
         
         String patientStr = "";

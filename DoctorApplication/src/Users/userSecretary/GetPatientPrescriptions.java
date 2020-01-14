@@ -17,6 +17,7 @@ import org.json.simple.JSONObject;
  */
 public class GetPatientPrescriptions {
     
+    //Gets a list of patient prescriptions
     public ArrayList <String> GetPatientPresc(String patientID){
         
         ArrayList<String> patientPresc = new ArrayList<String>();

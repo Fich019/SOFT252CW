@@ -16,6 +16,8 @@ import org.json.simple.JSONObject;
  */
 public class RequestAccountTermination {
     
+    //Changes a field in the patient json object to true. This value
+    //states if the account is to be deleted or not.
     public void DeleteAccount(String userID, String password){
         
         JSONArray jsonArray = DataController.getJSONData();

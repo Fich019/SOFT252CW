@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
  */
 public class CreatePrescription {
     
+    //Creates a new prescription and adds it to the main json file.
     public void AddPrescription(String dosage, String doctorID, String patientID, String medicine){
         
         JSONObject newPrescription = new JSONObject();

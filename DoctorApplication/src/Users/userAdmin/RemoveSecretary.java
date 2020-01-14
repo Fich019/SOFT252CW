@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
  */
 public class RemoveSecretary {
     
+    //Removes a secretary from the main json file.
     public void removeAccount(String name){
         
         JSONArray jsonArray = DataController.getJSONData();

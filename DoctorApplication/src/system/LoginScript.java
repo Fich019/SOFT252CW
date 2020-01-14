@@ -32,11 +32,13 @@ public class LoginScript {
     private String age;
     private String gender;
     
+    //Stores the id and password of a logged in paitent.
     public LoginScript(String newID, String newPassword){
         String id = newID;
         String password = newPassword;
     }
     
+    //Stores all of the data of a logged in user.
     public LoginScript(String newID, String newPass, String newName,
         String newAddress, String newAge, String newGender)
     {
@@ -48,6 +50,14 @@ public class LoginScript {
         gender = newGender;
     }
     
+    //Checks through the loginID and password and decides if they are valid,
+    //if they are it then checks to see which user logged in and creates a 
+    //corrisponding user class to match. It is checked by seeing what the first
+    //character is of the login as the defines which account is being logged in.
+    //It then searches the json file for users that match the id that has been
+    //given to it. If none match, the script calls a login fail and askes the
+    //user to log in again. If it suceeds, the data is stored in the user class and
+    //then takes them to the corrisponding home page.
     public void Login(String loginID, String loginPass){
         
         Boolean loginToken = false;
@@ -58,14 +68,23 @@ public class LoginScript {
         
         JSONArray jsonArray = DataController.getJSONData();
         
+        //Checks the first character of the username
         if (loginID.charAt(0) == 'P'){
                 
+            //Loops through the json array.
                 for (int i = 0; i < jsonArray.size(); i++){
                    
+                    //Trys to set a jsonobject as a curuser at position i,
+                    //then creates gets the array of patients.
                     try{
                         JSONObject curUser = (JSONObject) jsonArray.get(i);
                         JSONArray patients = (JSONArray) curUser.get("patients");
             
+                        //Searches through all of the patients in the file and set 
+                        //one as currentPat. It gets the id and password of currentPat
+                        //and checks to see if it matches the id and password passed
+                        //into the method. If it matches, set the data as the variables
+                        //given at the start of the class and sets login bool to true.
                         for (int j = 0; j < patients.size(); j++){
                             var currentPat = (JSONObject) patients.get(j);
                             //System.out.println(currentPat);
@@ -81,8 +100,8 @@ public class LoginScript {
                                 password = (String) currentPat.get("password");
                                 loginToken = true;
                             }
-                            System.out.println(currentPat);
-                            System.out.println(patID + patPass); 
+                            //System.out.println(currentPat);
+                            //System.out.println(patID + patPass); 
                         }
                      
                     }
@@ -91,9 +110,13 @@ public class LoginScript {
                     }
                     
                }
+                //Creates a new user depending on who logged on (patient in this case) and 
+                //stores the data in a new user.
                PatientUser p = new PatientUser(id, name, gender, age, address, password);
-               //System.out.println("ID is: "+id+"Name: "+name+age+gender+"PASSWORD "+password);
                
+               //A simple if statement that checks to see if logintoken is true, if it is
+               //proceed to log the current user in and take them to their homescreen,
+               //if not run loging fail.
                if(loginToken == true){
                 p.PatientLogin();
                 }
@@ -122,8 +145,8 @@ public class LoginScript {
                                 password = (String) currentPat.get("password");
                                 loginToken = true;
                             }
-                            System.out.println(currentPat);
-                            System.out.println(docID + docPass); 
+                            //System.out.println(currentPat);
+                            //System.out.println(docID + docPass); 
                         }
                      
                     }
@@ -163,8 +186,8 @@ public class LoginScript {
                                 password = (String) currentPat.get("password");
                                 loginToken = true;
                             }
-                            System.out.println(currentPat);
-                            System.out.println(adminID + adminPass); 
+                            //System.out.println(currentPat);
+                            //System.out.println(adminID + adminPass); 
                         }
                      
                     }
@@ -204,8 +227,8 @@ public class LoginScript {
                                 password = (String) currentPat.get("password");
                                 loginToken = true;
                             }
-                            System.out.println(currentPat);
-                            System.out.println(secID + secPass); 
+                            //System.out.println(currentPat);
+                            //System.out.println(secID + secPass); 
                         }
                      
                     }
@@ -229,6 +252,9 @@ public class LoginScript {
         }
         
     }  
+    
+    //Reloads the login page and opens a dialog box telling the user they have typed the incorrect username 
+    //or password and gets them to input it again.
     public void LoginFail(){
         Login login = new Login();
         login.setVisible(true);

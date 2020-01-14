@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class RequestAppointment {
     
+    //Requests a new accpointment for the secretary to approve if it is suitable.
     public void CreateNewAppointment(String doctorID, String patientID, String date){
         JSONArray tempArray = DataController.getTEMPData();
         

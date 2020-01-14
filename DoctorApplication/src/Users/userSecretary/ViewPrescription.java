@@ -20,6 +20,9 @@ public class ViewPrescription {
     private String patientid;
     private String medicine;
     
+    
+    //Gets a list of prescriptions that match a given user ID and
+    //medicine. Returns the prescriptions.
     public String getprescription(String userID, String meds){
         
         String prescriptionStr = "";

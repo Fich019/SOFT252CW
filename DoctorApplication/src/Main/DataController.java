@@ -23,6 +23,8 @@ public class DataController {
     
     //public static ArrayList<User> Temp = new ArrayList<User>();
     
+    
+    //Gets the json data from the main json file.
     public static JSONArray getJSONData() {
         
         JSONParser parser = new JSONParser();
@@ -44,6 +46,8 @@ public class DataController {
         return jsonArray;
     }
     
+    
+    //Writes to the main json file.
     public static JSONArray WriteToFile(JSONArray array){
         
         JSONArray jsonArray = array;
@@ -60,6 +64,7 @@ public class DataController {
         return jsonArray;
     }
     
+    //Gets the temp json file data.
     public static JSONArray getTEMPData() {
         
         JSONParser parser = new JSONParser();
@@ -81,6 +86,7 @@ public class DataController {
         return tempArray;
     }
     
+    //Writes to the temp json file.
     public static JSONArray WriteToTempFile(JSONArray array){
         
         JSONArray tempArray = array;

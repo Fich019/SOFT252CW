@@ -20,6 +20,8 @@ public class ViewAppointment {
     private String patientID;
     private String date;
     
+    
+    //Views the appointments of a certain date.
     public String GetAppointment(String date){
         String appointmentStr = "";
         

@@ -16,6 +16,8 @@ import org.json.simple.JSONObject;
  * @author Zack
  */
 public class GiveMeds {
+    
+    //Gets all of the patient ID that have been given a prescription
     public ArrayList <String> GetMeds(){
         
         ArrayList<String> meds = new ArrayList<String>();
@@ -45,6 +47,7 @@ public class GiveMeds {
         return meds;
     }
     
+    //Changes the value of given to true of the patient's prescription.
     public void GiveMeds(String userID, String meds){
         
         JSONArray jsonArray = DataController.getJSONData();

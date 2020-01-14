@@ -16,6 +16,8 @@ import org.json.simple.JSONObject;
  */
 public class GetQuantity {
     
+    //Gets the quantity of the currently selected medicine and returns it 
+    //to be printed.
     public String GetQuantity(String medicine){
         
         JSONArray jsonArray = DataController.getJSONData();

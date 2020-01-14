@@ -21,6 +21,8 @@ public class ViewHistory {
     private String date;
     private String note;
     
+    //Gets the id of the patient currently logged in and gets their appointments that
+    //they have attened.
     public String GetHistory(){
         
         String userID = PatientUser.userID;

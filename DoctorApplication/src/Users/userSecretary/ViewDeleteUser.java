@@ -21,6 +21,8 @@ public class ViewDeleteUser {
     private String age;
     private String gender;
     
+    //Gets the data of a selected user to be printed as a 
+    //string.
     public String getSelectedUser(String userID){
         
         String patientStr = "";

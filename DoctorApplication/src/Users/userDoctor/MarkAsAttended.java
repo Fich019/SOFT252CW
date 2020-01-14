@@ -16,6 +16,9 @@ import org.json.simple.JSONObject;
  */
 public class MarkAsAttended {
     
+    //Changes the attended value in appointments if the date and
+    //patient id are the same to atteneded. This is a function the doctor
+    //has to do.
     public void Attended(String date, String patientID){
         
         JSONArray jsonArray = DataController.getJSONData();

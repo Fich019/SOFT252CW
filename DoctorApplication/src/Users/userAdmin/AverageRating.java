@@ -16,6 +16,10 @@ import org.json.simple.JSONObject;
  */
 public class AverageRating {
     
+    //Fetchess the rating from the notes if they have matching id to an id passsed
+    //to it. If they do, it adds the rating to an integer that will eventually become
+    //an average once the code has found all of the matching notes for that 
+    //specific doctor.
     public String GetAverage(String docID){
         
         JSONArray jsonArray = DataController.getJSONData();

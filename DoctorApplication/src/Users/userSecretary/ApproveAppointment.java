@@ -17,6 +17,7 @@ import org.json.simple.JSONObject;
  */
 public class ApproveAppointment {
     
+    //Gets list of appointments to be approved from the temp json file.
     public ArrayList <String> GetAppointments(){
         
         ArrayList<String> Apointments = new ArrayList<String>();
@@ -44,6 +45,7 @@ public class ApproveAppointment {
         return Apointments;
     }
     
+    //Removes the appointments from the temp json file.
     public void RemoveAppointment(String date){
         JSONArray tempArray = DataController.getTEMPData();
         
@@ -68,6 +70,8 @@ public class ApproveAppointment {
         DataController.WriteToTempFile(tempArray);
     }
     
+    //Adds appointment from the temp file to the main json file, the 
+    //calls the remove appointment method.
     public void AddAppointment(String date){
         
         JSONArray jsonArray = DataController.getJSONData();
@@ -88,6 +92,8 @@ public class ApproveAppointment {
         RemoveAppointment(approvedPat.get("date").toString());
     }
     
+    //Gets the date of an appointment object and returns it to
+    //be displayed.
     public JSONObject GetAppointment(String date){
         JSONObject appointmentToApp = new JSONObject();
         JSONArray tempArray = DataController.getTEMPData();

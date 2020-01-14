@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class CreateAdmin {
     
+    //Creates a new admin account in the main json file.
     public void CreateNewAdmin(String password, String address, String name){
         
         int count = 0;

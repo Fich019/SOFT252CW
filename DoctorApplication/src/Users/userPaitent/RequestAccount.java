@@ -15,6 +15,9 @@ import org.json.simple.JSONObject;
  */
 public class RequestAccount {
     
+    //Creates a new request for a patient account. This is stored in a temporary json file and will be
+    //approved if the secretary wills it so. In order to make sure the id is different, it counts the array
+    //of patients in both files and uses the combined number as a user id.
     public void CreateNewAccount(String password, String address, String gender, String name, String age){
         
         int count = 0;

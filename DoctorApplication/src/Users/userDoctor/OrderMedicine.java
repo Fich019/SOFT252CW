@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class OrderMedicine {
     
+    //Creates a new medicine for the secretary to order.
     public void AppendMedsToFile(String quantity, String name){
         
         JSONObject newMedicine = new JSONObject();

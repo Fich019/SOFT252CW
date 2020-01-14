@@ -16,6 +16,7 @@ public interface User {
     
     public static final AtomicInteger count = new AtomicInteger(0); 
     
+    //Main interface for all of the different users.
     String userID = "";
     String name = "";
     String address = "";

@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
  */
 public class OrderMeds {
     
+    //Adds a order amount to the quantity of given medicine.
     public void addMeds(String medicine){
         
         JSONArray jsonArray = DataController.getJSONData();

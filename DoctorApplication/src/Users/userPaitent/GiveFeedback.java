@@ -19,6 +19,8 @@ import org.json.simple.JSONObject;
  */
 public class GiveFeedback {
     
+    //Gets all the id's for the doctors in the main json array to be displayed
+    //in a combo box.
     public ArrayList<String> GetDoctorIDs(){
         ArrayList<String> docIDs = new ArrayList<String>();
         
@@ -41,6 +43,8 @@ public class GiveFeedback {
         }
         return docIDs;
     }
+    
+    //Adds the new feedback to the main json file.
     public void AppendToFile(String docID, String rating, String notes){
         
         JSONObject newFeedback = new JSONObject();
@@ -74,15 +78,6 @@ public class GiveFeedback {
         //jsonArray.add(doctorFeedback);
         System.out.println(jsonArray);
         DataController.WriteToFile(jsonArray);
-//        try (FileWriter file = new FileWriter("C:\\Users\\Zack\\Documents\\GitHub\\SOFT252CW\\DoctorApplication\\data\\dataJSON.json")){
-//            //file.flush();
-//            file.write(jsonArray.toJSONString());
-//            file.flush();
-//            
-//        }
-//        catch(IOException e){
-//            e.printStackTrace();
-//        }
         
         
     }

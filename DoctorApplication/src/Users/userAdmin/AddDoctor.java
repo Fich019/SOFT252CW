@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class AddDoctor {
     
+    //Adds a new doctor the main json data file.
     public void CreateNewAccount(String password, String address, String name){
         
         int count = 0;

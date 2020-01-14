@@ -17,7 +17,8 @@ import org.json.simple.JSONObject;
  */
 public class GetMedicines {
     
-    
+    //Gets a list of all the medicines in the json file and returns them to
+    //be printed in a combobox in a form
     public ArrayList <String> GetMeds(){
         
         ArrayList<String> meds = new ArrayList<String>();

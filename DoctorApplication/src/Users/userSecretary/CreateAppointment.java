@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
  */
 public class CreateAppointment {
     
+    //Gets a list of all doctors in the main json file.
     public ArrayList<String> GetDoctorIDs(){
         ArrayList<String> docIDs = new ArrayList<String>();
         
@@ -39,6 +40,7 @@ public class CreateAppointment {
         return docIDs;
     }
     
+    //Gets a list of all patients in the main json file.
     public ArrayList<String> GetPatientIDs(){
         ArrayList<String> patIDs = new ArrayList<String>();
         
@@ -62,6 +64,7 @@ public class CreateAppointment {
         return patIDs;
     }
     
+    //Creates a new appointment and adds it to the main json file.
     public void AppendToFile(String date, String doctorID, String patientID){
         
         JSONObject newAppointment = new JSONObject();

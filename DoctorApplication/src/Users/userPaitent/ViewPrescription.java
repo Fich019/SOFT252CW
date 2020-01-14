@@ -21,6 +21,7 @@ public class ViewPrescription {
     protected String medicine;
     protected String dosage;
     
+    //Gets the prescriptions of the currently logged in patient
     public String getPrescription(){
         String userID = PatientUser.userID;
         String prescriptionStr = "";

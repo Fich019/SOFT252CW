@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
  */
 public class AppendNotes {
     
+    //Appends new notes to the main json file.
     public void AppendNotes(String notes, String date, String patientID){
         
         JSONArray jsonArray = DataController.getJSONData();

@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class NewDocFeedback {
     
+    //Adds new doctor feedback to the main json file
     public void AppendDocFeedback(String docID, String rating, String notes){
         
         JSONObject newFeedback = new JSONObject();

@@ -20,6 +20,8 @@ public class ViewAppointments {
     private String patientID;
     private String date;
     
+    //Gets the id of the patient currently logged in and gets their appointments that
+    //they haven't attened yet.
     public String GetAppointment(){
         String userID = PatientUser.userID;
         String appointmentStr = "";

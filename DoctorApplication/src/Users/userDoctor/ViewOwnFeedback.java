@@ -19,6 +19,8 @@ public class ViewOwnFeedback {
     private String note;
     private String rating;
     
+    //Gets the feedback for the doctor that is currently
+    //logged into the system.
     public String GetNotes(String docID){
         String notesStr = "";
         

@@ -21,6 +21,9 @@ public class GetPatientHistory {
     private String date;
     private String note;
     
+    //Gets the history of the current patient that has been
+    //selected in a combo box in a form. Displays the data in
+    // the same form.
     public String GetHistory(String userID){
         
         

@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
  */
 public class CreateAppointment {
     
+    //Creates a new appointment and adds it to the json file
     public void CreateNewAppointment(String doctorID, String patientID, String date){
         
         JSONArray jsonArray = DataController.getJSONData();

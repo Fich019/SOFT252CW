@@ -17,6 +17,7 @@ import org.json.simple.JSONObject;
  */
 public class ApproveAccounts {
     
+    //Gets a list of all of the patient accounts to be approved that are stored in the temp json file.
     public ArrayList <String> GetTempPatientID(){
         
         ArrayList<String> patIDs = new ArrayList<String>();
@@ -41,6 +42,7 @@ public class ApproveAccounts {
         return patIDs;
     }
     
+    //Removes the patient account from the temp json file.
     public void RemoveTempAccount(String userID){
         JSONArray tempArray = DataController.getTEMPData();
         
@@ -65,6 +67,9 @@ public class ApproveAccounts {
         DataController.WriteToTempFile(tempArray);
     }
     
+    //Adds the patient account the the main json file and then calls the 
+    //method to remove it from the temp file once it has been added to
+    //the main one.
     public void AddTempAccount(String userID){
         
         JSONArray jsonArray = DataController.getJSONData();
@@ -85,6 +90,9 @@ public class ApproveAccounts {
         RemoveTempAccount(approvedPat.get("id").toString());
     }
     
+    
+    //Gets a paitent that matches the ID of a user that has
+    //been passed into it.
     public JSONObject GetPatient(String userID){
         JSONObject patientToApp = new JSONObject();
         JSONArray tempArray = DataController.getTEMPData();
