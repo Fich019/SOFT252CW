@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DoctorApplication">
+  <ClassDiagramComponents>
+    <Class name="DataController" package="Main" visibility="public" xPosition="1203.0" yPosition="1533.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getJSONData" returnType="JSONArray" visibility="public" isStatic="true"/>
+        <Method name="WriteToFile" returnType="JSONArray" visibility="public" isStatic="true">
+          <Argument type="JSONArray" name="array"/>
+        </Method>
+        <Method name="getTEMPData" returnType="JSONArray" visibility="public" isStatic="true"/>
+        <Method name="WriteToTempFile" returnType="JSONArray" visibility="public" isStatic="true">
+          <Argument type="JSONArray" name="array"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginScript" package="system" visibility="public" xPosition="1030.0" yPosition="1027.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="age" type="String" visibility="private"/>
+        <Field name="gender" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="newID"/>
+          <Argument type="String" name="newPassword"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="newID"/>
+          <Argument type="String" name="newPass"/>
+          <Argument type="String" name="newName"/>
+          <Argument type="String" name="newAddress"/>
+          <Argument type="String" name="newAge"/>
+          <Argument type="String" name="newGender"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Login" returnType="String" visibility="public">
+          <Argument type="String" name="loginID"/>
+          <Argument type="String" name="loginPass"/>
+        </Method>
+        <Method name="LoginFail" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AdminUser" package="Users" visibility="public" xPosition="1632.0" yPosition="357.0">
+      <Fields>
+        <Field name="userID" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="AdminLogin" returnType="void" visibility="public"/>
+        <Method name="getUserID" returnType="String" visibility="public"/>
+        <Method name="setUserID" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="String" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="String" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DoctorUser" package="Users" visibility="public" xPosition="2393.0" yPosition="357.0">
+      <Fields>
+        <Field name="userID" type="String" visibility="public" isStatic="true"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="DoctorLogin" returnType="void" visibility="public"/>
+        <Method name="getUserID" returnType="String" visibility="public"/>
+        <Method name="setUserID" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="String" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="String" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PatientUser" package="Users" visibility="public" xPosition="974.0" yPosition="243.0">
+      <Fields>
+        <Field name="userID" type="String" visibility="public" isStatic="true"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="sex" type="String" visibility="private"/>
+        <Field name="age" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="sex"/>
+          <Argument type="String" name="age"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="PatientLogin" returnType="void" visibility="public"/>
+        <Method name="getUserID" returnType="String" visibility="public"/>
+        <Method name="setUserID" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="String" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="String" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getSex" returnType="String" visibility="public"/>
+        <Method name="setSex" returnType="String" visibility="public">
+          <Argument type="String" name="sex"/>
+        </Method>
+        <Method name="getAge" returnType="String" visibility="public"/>
+        <Method name="setAge" returnType="String" visibility="public">
+          <Argument type="String" name="age"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SecretaryUser" package="Users" visibility="public" xPosition="251.0" yPosition="187.0">
+      <Fields>
+        <Field name="userID" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="SecretaryLogin" returnType="void" visibility="public"/>
+        <Method name="getUserID" returnType="String" visibility="public"/>
+        <Method name="setUserID" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="String" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="String" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AddDoctor" package="Users.userAdmin" visibility="public" xPosition="2436.0" yPosition="1198.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CreateNewAccount" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AddSecretary" package="Users.userAdmin" visibility="public" xPosition="1872.0" yPosition="947.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CreateNewSec" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AverageRating" package="Users.userAdmin" visibility="public" xPosition="113.0" yPosition="2087.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetAverage" returnType="String" visibility="public">
+          <Argument type="String" name="docID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CreateAdmin" package="Users.userAdmin" visibility="public" xPosition="2300.0" yPosition="1055.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CreateNewAdmin" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewDocFeedback" package="Users.userAdmin" visibility="public" xPosition="113.0" yPosition="1834.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="AppendDocFeedback" returnType="String" visibility="public">
+          <Argument type="String" name="docID"/>
+          <Argument type="String" name="rating"/>
+          <Argument type="String" name="notes"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RemoveDoctor" package="Users.userAdmin" visibility="public" xPosition="2243.0" yPosition="1351.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="removeAccount" returnType="String" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RemoveSecretary" package="Users.userAdmin" visibility="public" xPosition="1899.0" yPosition="1379.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="removeAccount" returnType="String" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewDocFeedback" package="Users.userAdmin" visibility="public" xPosition="419.0" yPosition="1538.0">
+      <Fields>
+        <Field name="note" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetNotes" returnType="String" visibility="public">
+          <Argument type="String" name="docID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewDocRatings" package="Users.userAdmin" visibility="public" xPosition="897.0" yPosition="2038.0">
+      <Fields>
+        <Field name="rating" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetRatings" returnType="String" visibility="public">
+          <Argument type="String" name="docID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AppendNotes" package="Users.userDoctor" visibility="public" xPosition="3123.0" yPosition="1106.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="AppendNotes" returnType="String" visibility="public">
+          <Argument type="String" name="notes"/>
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="patientID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CreateAppointment" package="Users.userDoctor" visibility="public" xPosition="3345.0" yPosition="985.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CreateNewAppointment" returnType="String" visibility="public">
+          <Argument type="String" name="doctorID"/>
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="date"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CreatePrescription" package="Users.userDoctor" visibility="public" xPosition="2868.0" yPosition="141.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="AddPrescription" returnType="String" visibility="public">
+          <Argument type="String" name="dosage"/>
+          <Argument type="String" name="doctorID"/>
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="medicine"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GetMedicines" package="Users.userDoctor" visibility="public" xPosition="825.0" yPosition="1687.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetMeds" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GetPatientAppointments" package="Users.userDoctor" visibility="public" xPosition="2017.0" yPosition="2017.0">
+      <Fields>
+        <Field name="note" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetAppointments" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+        </Method>
+        <Method name="GetPatientAppointments" returnType="String" visibility="public">
+          <Argument type="String" name="selectedPatient"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GetPatientHistory" package="Users.userDoctor" visibility="public" xPosition="3571.0" yPosition="415.0">
+      <Fields>
+        <Field name="doctorID" type="String" visibility="private"/>
+        <Field name="patientID" type="String" visibility="private"/>
+        <Field name="date" type="String" visibility="private"/>
+        <Field name="note" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetHistory" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MarkAsAttended" package="Users.userDoctor" visibility="public" xPosition="2884.0" yPosition="373.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Attended" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="patientID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrderMedicine" package="Users.userDoctor" visibility="public" xPosition="3424.0" yPosition="187.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="AppendMedsToFile" returnType="String" visibility="public">
+          <Argument type="String" name="quantity"/>
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewOwnFeedback" package="Users.userDoctor" visibility="public" xPosition="3077.0" yPosition="933.0">
+      <Fields>
+        <Field name="note" type="String" visibility="private"/>
+        <Field name="rating" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetNotes" returnType="String" visibility="public">
+          <Argument type="String" name="docID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GiveFeedback" package="Users.userPaitent" visibility="public" xPosition="2415.0" yPosition="1834.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetDoctorIDs" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="AppendToFile" returnType="String" visibility="public">
+          <Argument type="String" name="docID"/>
+          <Argument type="String" name="rating"/>
+          <Argument type="String" name="notes"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RequestAccount" package="Users.userPaitent" visibility="public" xPosition="2205.0" yPosition="1534.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CreateNewAccount" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="gender"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="age"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RequestAccountTermination" package="Users.userPaitent" visibility="public" xPosition="2515.0" yPosition="1676.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="DeleteAccount" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RequestAppointment" package="Users.userPaitent" visibility="public" xPosition="2430.0" yPosition="2017.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="CreateNewAppointment" returnType="String" visibility="public">
+          <Argument type="String" name="doctorID"/>
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="date"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewAppointments" package="Users.userPaitent" visibility="public" xPosition="1605.0" yPosition="1823.0">
+      <Fields>
+        <Field name="doctorID" type="String" visibility="private"/>
+        <Field name="patientID" type="String" visibility="private"/>
+        <Field name="date" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetAppointment" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ViewHistory" package="Users.userPaitent" visibility="public" xPosition="1815.0" yPosition="1890.0">
+      <Fields>
+        <Field name="doctorID" type="String" visibility="private"/>
+        <Field name="patientID" type="String" visibility="private"/>
+        <Field name="date" type="String" visibility="private"/>
+        <Field name="note" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetHistory" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ViewPrescription" package="Users.userPaitent" visibility="public" xPosition="2173.0" yPosition="1692.0">
+      <Fields>
+        <Field name="doctorID" type="String" visibility="protected"/>
+        <Field name="patientID" type="String" visibility="protected"/>
+        <Field name="medicine" type="String" visibility="protected"/>
+        <Field name="dosage" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPrescription" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ApproveAccounts" package="Users.userSecretary" visibility="public" xPosition="704.0" yPosition="1027.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetTempPatientID" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="RemoveTempAccount" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="AddTempAccount" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="GetPatient" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ApproveAppointment" package="Users.userSecretary" visibility="public" xPosition="25.0" yPosition="1049.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetAppointments" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="RemoveAppointment" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+        </Method>
+        <Method name="AddAppointment" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+        </Method>
+        <Method name="GetAppointment" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CreateAppointment" package="Users.userSecretary" visibility="public" xPosition="-69.0" yPosition="1409.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetDoctorIDs" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="GetPatientIDs" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="AppendToFile" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="doctorID"/>
+          <Argument type="String" name="patientID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GetPatientPrescriptions" package="Users.userSecretary" visibility="public" xPosition="615.0" yPosition="1880.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetPatientPresc" returnType="String" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GetQuantity" package="Users.userSecretary" visibility="public" xPosition="25.0" yPosition="883.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetQuantity" returnType="String" visibility="public">
+          <Argument type="String" name="medicine"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GiveMeds" package="Users.userSecretary" visibility="public" xPosition="129.0" yPosition="1636.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetMeds" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="GiveMeds" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="meds"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrderMeds" package="Users.userSecretary" visibility="public" xPosition="129.0" yPosition="676.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="addMeds" returnType="String" visibility="public">
+          <Argument type="String" name="medicine"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RemoveAccount" package="Users.userSecretary" visibility="public" xPosition="501.0" yPosition="2038.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="GetRemovePatients" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="removeAccount" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewAppointment" package="Users.userSecretary" visibility="public" xPosition="2839.0" yPosition="750.0">
+      <Fields>
+        <Field name="doctorID" type="String" visibility="private"/>
+        <Field name="patientID" type="String" visibility="private"/>
+        <Field name="date" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetAppointment" returnType="String" visibility="public">
+          <Argument type="String" name="date"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewDeleteUser" package="Users.userSecretary" visibility="public" xPosition="684.0" yPosition="1495.0">
+      <Fields>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="age" type="String" visibility="private"/>
+        <Field name="gender" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getSelectedUser" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewPrescription" package="Users.userSecretary" visibility="public" xPosition="3473.0" yPosition="705.0">
+      <Fields>
+        <Field name="dosage" type="String" visibility="private"/>
+        <Field name="doctorid" type="String" visibility="private"/>
+        <Field name="patientid" type="String" visibility="private"/>
+        <Field name="medicine" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getprescription" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="meds"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ViewTempUsers" package="Users.userSecretary" visibility="public" xPosition="584.0" yPosition="788.0">
+      <Fields>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="age" type="String" visibility="private"/>
+        <Field name="gender" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getSelectedUser" returnType="String" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="User" package="Users" visibility="public" xPosition="1407.0" yPosition="35.0">
+      <Methods>
+        <Method name="getUserID" returnType="String" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="SecretaryMethods" package="" visibility="public" xPosition="334.0" yPosition="866.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="AdminMethod" package="" visibility="public" xPosition="2047.0" yPosition="1146.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="DoctorMethods" package="" visibility="public" xPosition="3213.0" yPosition="646.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PatientMethods" package="" visibility="public" xPosition="1872.0" yPosition="1737.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="Users.DoctorUser" target="DoctorMethods" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.ViewHistory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userAdmin.ViewDocRatings" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Users.DoctorUser" target="Users.User"/>
+    <UseRelation name="" source="AdminMethod" target="Users.userAdmin.RemoveSecretary" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.ApproveAppointment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userAdmin.AverageRating" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="AdminMethod" target="Users.userAdmin.AddDoctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.AdminUser" target="system.LoginScript" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.GetPatientHistory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.PatientUser" target="system.LoginScript" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.ViewOwnFeedback" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userAdmin.NewDocFeedback" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="AdminMethod" target="Users.userAdmin.CreateAdmin" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.ViewPrescription" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.RequestAccount" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.DoctorUser" target="system.LoginScript" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.OrderMedicine" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Main.DataController" target="PatientMethods" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.CreateAppointment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Users.PatientUser" target="Users.User"/>
+    <UseRelation name="" source="Main.DataController" target="DoctorMethods" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.SecretaryUser" target="system.LoginScript" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Main.DataController" target="AdminMethod" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userSecretary.ViewAppointment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.GetPatientPrescriptions" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.CreatePrescription" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.AppendNotes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="AdminMethod" target="Users.userAdmin.AddSecretary" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.RequestAccountTermination" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Users.AdminUser" target="Users.User"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userDoctor.GetMedicines" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.ApproveAccounts" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.GiveMeds" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.RequestAppointment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="system.LoginScript" target="Main.DataController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.PatientUser" target="PatientMethods" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.ViewTempUsers" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.GiveFeedback" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.OrderMeds" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Users.SecretaryUser" target="Users.User"/>
+    <UseRelation name="" source="Main.DataController" target="SecretaryMethods" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.GetQuantity" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userAdmin.ViewDocFeedback" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.SecretaryUser" target="SecretaryMethods" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userSecretary.ViewPrescription" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userDoctor.GetPatientAppointments" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.MarkAsAttended" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.ViewDeleteUser" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretaryMethods" target="Users.userSecretary.RemoveAccount" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Users.AdminUser" target="AdminMethod" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="DoctorMethods" target="Users.userDoctor.CreateAppointment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="AdminMethod" target="Users.userAdmin.RemoveDoctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PatientMethods" target="Users.userPaitent.ViewAppointments" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
