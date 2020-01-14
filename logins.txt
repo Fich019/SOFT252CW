@@ -1,0 +1,4 @@
+Doctor login : D0001, a
+Patient login : P0001,a 
+Secretary login : S0001,a
+Admin login : A0001,a

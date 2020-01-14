@@ -1,0 +1,1 @@
+Build wont run properly, have to open it in netbeans for the project to work properly.
