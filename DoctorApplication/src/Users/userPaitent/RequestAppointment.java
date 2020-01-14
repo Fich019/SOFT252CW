@@ -30,6 +30,7 @@ public class RequestAppointment {
             
             newAppointment.put("date", date);
             newAppointment.put("attended", "false");
+            newAppointment.put("notes", null);
             newAppointment.put("doctorid", doctorID);
             newAppointment.put("patientid", patientID);
                

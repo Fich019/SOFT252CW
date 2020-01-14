@@ -26,7 +26,15 @@
       {
         "date": "02\/11\/2020",
         "attended": "false",
+        "notes": null,
         "doctorid": "D0002",
+        "patientid": "P0001"
+      },
+      {
+        "date": "02\/10\/2022",
+        "attended": "false",
+        "notes": null,
+        "doctorid": "D0003",
         "patientid": "P0001"
       }
     ]

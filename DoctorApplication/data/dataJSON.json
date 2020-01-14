@@ -128,6 +128,7 @@
       {
         "date": "05\/08\/2020",
         "attended": "false",
+        "notes": null,
         "doctorid": "D0001",
         "patientid": "P0001"
       },

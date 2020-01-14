@@ -19,6 +19,7 @@ public class ViewHistory {
     private String doctorID;
     private String patientID;
     private String date;
+    private String note;
     
     public String GetHistory(){
         
@@ -49,7 +50,8 @@ public class ViewHistory {
                             doctorID = (String) currentApp.get("doctorid");
                             patientID = (String) currentApp.get("patientid");
                             date = (String) currentApp.get("date");
-                            historyStr += ("Doctor: "+doctorID+"\n Saw: "+patientID+"\n On date: "+date+" \n\n");
+                            note = (String) currentApp.get("note");
+                            historyStr += ("Doctor: "+doctorID+"\n Saw: "+patientID+"\n On date: "+date+" \nNotes:"+note+"\n\n");
                             
                         }
                     }
