@@ -36,6 +36,7 @@
                           <Component id="btncreateAppointment" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnorderMeds" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnconsult" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnvFeedback" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="251" max="32767" attributes="0"/>
                   </Group>
@@ -55,7 +56,9 @@
               <Component id="btnorderMeds" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnconsult" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="118" max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <Component id="btnvFeedback" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Component id="btnlogoff1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -99,6 +102,14 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnconsultMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnvFeedback">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="View your feedback"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnvFeedbackMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

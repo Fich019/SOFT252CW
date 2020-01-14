@@ -34,6 +34,7 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
         btnorderMeds = new javax.swing.JButton();
         btnlogoff1 = new javax.swing.JButton();
         btnconsult = new javax.swing.JButton();
+        btnvFeedback = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,13 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
             }
         });
 
+        btnvFeedback.setText("View your feedback");
+        btnvFeedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnvFeedbackMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,7 +95,8 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(btncreateAppointment)
                             .addComponent(btnorderMeds)
-                            .addComponent(btnconsult))
+                            .addComponent(btnconsult)
+                            .addComponent(btnvFeedback))
                         .addGap(0, 251, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -102,7 +111,9 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
                 .addComponent(btnorderMeds)
                 .addGap(18, 18, 18)
                 .addComponent(btnconsult)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(btnvFeedback)
+                .addGap(46, 46, 46)
                 .addComponent(btnlogoff1)
                 .addContainerGap())
         );
@@ -137,6 +148,12 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
         new Consult().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnconsultMouseClicked
+
+    private void btnvFeedbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnvFeedbackMouseClicked
+        // TODO add your handling code here:
+        new FViewOwnFeedback().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnvFeedbackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,6 +195,7 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
     private javax.swing.JButton btncreateAppointment;
     private javax.swing.JButton btnlogoff1;
     private javax.swing.JButton btnorderMeds;
+    private javax.swing.JButton btnvFeedback;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

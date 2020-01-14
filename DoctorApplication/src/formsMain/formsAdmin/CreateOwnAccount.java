@@ -5,6 +5,10 @@
  */
 package formsMain.formsAdmin;
 
+import Users.userAdmin.CreateAdmin;
+import java.util.Objects;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zack
@@ -35,8 +39,6 @@ public class CreateOwnAccount extends javax.swing.JFrame {
         txtpassword = new javax.swing.JTextField();
         lblConfirmPassword = new javax.swing.JLabel();
         txtconfirmPassword = new javax.swing.JTextField();
-        lblAge = new javax.swing.JLabel();
-        txtage = new javax.swing.JTextField();
         lblAddress = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnback = new javax.swing.JButton();
@@ -46,6 +48,11 @@ public class CreateOwnAccount extends javax.swing.JFrame {
         lblDesiredUname.setText("Enter Your Name :");
 
         btncreateAccount.setText("Create Account");
+        btncreateAccount.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncreateAccountMouseClicked(evt);
+            }
+        });
         btncreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncreateAccountActionPerformed(evt);
@@ -55,8 +62,6 @@ public class CreateOwnAccount extends javax.swing.JFrame {
         lblDesiredPasswd.setText("Chose A Strong Password :");
 
         lblConfirmPassword.setText("Confirm Password :");
-
-        lblAge.setText("Enter Your Age :");
 
         lblAddress.setText("Enter Your Address :");
 
@@ -89,16 +94,16 @@ public class CreateOwnAccount extends javax.swing.JFrame {
                                         .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lblDesiredUname)
                                             .addComponent(lblDesiredPasswd)
-                                            .addComponent(lblConfirmPassword)
-                                            .addComponent(lblAge))
+                                            .addComponent(lblConfirmPassword))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txtage)
-                                            .addComponent(txtconfirmPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtpassword)
-                                            .addComponent(txtuserName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(txtconfirmPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                                            .addComponent(txtpassword)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblDesiredUname)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 143, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -113,14 +118,10 @@ public class CreateOwnAccount extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(btnback))
-                .addGap(39, 39, 39)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDesiredUname))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAge)
-                    .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAddress)
@@ -133,7 +134,7 @@ public class CreateOwnAccount extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtconfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblConfirmPassword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(btncreateAccount)
                 .addContainerGap())
         );
@@ -150,6 +151,28 @@ public class CreateOwnAccount extends javax.swing.JFrame {
         new AdminHomeScreen().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnbackMouseClicked
+
+    private void btncreateAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncreateAccountMouseClicked
+        // TODO add your handling code here:
+        if (Objects.equals(txtpassword.getText(), txtconfirmPassword.getText())){
+            String name = txtuserName.getText();
+            String address = txtaddress.getText();
+            String password = txtpassword.getText();
+            CreateAdmin a = new CreateAdmin();
+            a.CreateNewAdmin(password, address, name);
+            
+            JOptionPane.showMessageDialog(null, "Account successfully created", "Ok", JOptionPane.INFORMATION_MESSAGE);
+            
+            txtpassword.setText("");
+            txtconfirmPassword.setText("");
+            txtaddress.setText("");
+            txtuserName.setText("");
+        
+        }else{
+            JOptionPane.showMessageDialog(null, "Passwords do not match", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btncreateAccountMouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,12 +214,10 @@ public class CreateOwnAccount extends javax.swing.JFrame {
     private javax.swing.JButton btncreateAccount;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAddress;
-    private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblConfirmPassword;
     private javax.swing.JLabel lblDesiredPasswd;
     private javax.swing.JLabel lblDesiredUname;
     private javax.swing.JTextField txtaddress;
-    private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtconfirmPassword;
     private javax.swing.JTextField txtpassword;
     private javax.swing.JTextField txtuserName;

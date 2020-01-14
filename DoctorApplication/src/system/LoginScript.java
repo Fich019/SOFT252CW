@@ -224,6 +224,9 @@ public class LoginScript {
                     LoginFail();
                 }
         }
+        else{
+            LoginFail();
+        }
         
     }  
     public void LoginFail(){

@@ -39,6 +39,7 @@ public class FRemoveAccount extends javax.swing.JFrame {
         btnapprove = new javax.swing.JButton();
         cmbxpatientIDs = new javax.swing.JComboBox<>();
         btnback = new javax.swing.JButton();
+        chxbxconfirmTerm = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -85,6 +86,8 @@ public class FRemoveAccount extends javax.swing.JFrame {
             }
         });
 
+        chxbxconfirmTerm.setText("Are you sure you want to terminate your account?");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,6 +107,7 @@ public class FRemoveAccount extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chxbxconfirmTerm)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblPatientID)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -128,7 +132,9 @@ public class FRemoveAccount extends javax.swing.JFrame {
                             .addComponent(cmbxpatientIDs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 87, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(chxbxconfirmTerm)
+                        .addGap(0, 46, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -137,11 +143,19 @@ public class FRemoveAccount extends javax.swing.JFrame {
 
     private void btnapproveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnapproveMouseClicked
         // TODO add your handling code here:
-        String userID = cmbxpatientIDs.getSelectedItem().toString();
-        RemoveAccount a = new RemoveAccount();
-        a.removeAccount(userID);
+        if (chxbxconfirmTerm.isSelected()){
+            String userID = cmbxpatientIDs.getSelectedItem().toString();
+            RemoveAccount a = new RemoveAccount();
+            a.removeAccount(userID);
+            
+            JOptionPane.showMessageDialog(null, "Account removal completed!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Make sure to tick are you sure want to terminate your account", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
 
-        JOptionPane.showMessageDialog(null, "Account removal completed!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        
 
         new SecretaryHomeScreen().setVisible(true);
         this.dispose();
@@ -221,6 +235,7 @@ public class FRemoveAccount extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnapprove;
     private javax.swing.JButton btnback;
+    private javax.swing.JCheckBox chxbxconfirmTerm;
     private javax.swing.JComboBox<String> cmbxpatientIDs;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblPatientID;

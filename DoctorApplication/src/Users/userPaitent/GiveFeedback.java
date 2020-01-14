@@ -53,7 +53,7 @@ public class GiveFeedback {
                    
             try{
                 JSONObject curUser = (JSONObject) jsonArray.get(i);
-                doctorFeedback = (JSONArray) curUser.get("docfeedback");
+                doctorFeedback = (JSONArray) curUser.get("Notes");
                 
                 
                 newFeedback.put("doctorid", docID);

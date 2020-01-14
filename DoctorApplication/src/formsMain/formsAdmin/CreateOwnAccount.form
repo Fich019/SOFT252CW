@@ -41,18 +41,19 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="lblDesiredUname" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblDesiredPasswd" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblConfirmPassword" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblAge" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtage" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="txtconfirmPassword" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtconfirmPassword" alignment="0" pref="102" max="32767" attributes="0"/>
                                           <Component id="txtpassword" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="txtuserName" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblDesiredUname" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtuserName" min="-2" pref="102" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="143" max="32767" attributes="0"/>
@@ -77,15 +78,10 @@
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnback" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtuserName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblDesiredUname" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtage" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -102,7 +98,7 @@
                   <Component id="txtconfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblConfirmPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
               <Component id="btncreateAccount" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -124,6 +120,7 @@
         <Property name="text" type="java.lang.String" value="Create Account"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btncreateAccountMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncreateAccountActionPerformed"/>
       </Events>
     </Component>
@@ -140,13 +137,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtconfirmPassword">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblAge">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Enter Your Age :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtage">
     </Component>
     <Component class="javax.swing.JLabel" name="lblAddress">
       <Properties>

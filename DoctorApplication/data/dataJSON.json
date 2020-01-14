@@ -120,6 +120,11 @@
         "notes": "Test 5",
         "doctorid": "D0003",
         "rating": "1"
+      },
+      {
+        "notes": "this is a test",
+        "doctorid": "D0003",
+        "rating": "2"
       }
     ]
   },
@@ -215,7 +220,7 @@
       },
       {
         "ordered": true,
-        "quantity": "16",
+        "quantity": "24",
         "name": "Vicodin"
       },
       {
@@ -234,8 +239,8 @@
       },
       {
         "notes": "Average service",
-        "rating": "3",
-        "docterid": "D0002"
+        "doctorid": "D0002",
+        "rating": "3"
       },
       {
         "notes": "Test 3",
@@ -259,8 +264,8 @@
       },
       {
         "notes": "Average service",
-        "rating": "3",
-        "docterid": "D0002"
+        "doctorid": "D0002",
+        "rating": "3"
       },
       {
         "notes": "Test 3",
@@ -289,8 +294,8 @@
       },
       {
         "notes": "Average service",
-        "rating": "3",
-        "docterid": "D0002"
+        "doctorid": "D0002",
+        "rating": "3"
       },
       {
         "notes": "Test 3",

@@ -34,6 +34,7 @@ public class AdminHomeScreen extends javax.swing.JFrame {
         btnaddRem = new javax.swing.JButton();
         btnprovideFeedback = new javax.swing.JButton();
         btnlogOff = new javax.swing.JButton();
+        btnaddRemSec = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,7 +47,7 @@ public class AdminHomeScreen extends javax.swing.JFrame {
             }
         });
 
-        btnaddRem.setText("Add / Remove Doctors / Secretaries");
+        btnaddRem.setText("Add / Remove Doctors");
         btnaddRem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnaddRemMouseClicked(evt);
@@ -72,6 +73,13 @@ public class AdminHomeScreen extends javax.swing.JFrame {
             }
         });
 
+        btnaddRemSec.setText("Add / Remove Secretaries");
+        btnaddRemSec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnaddRemSecMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,15 +87,22 @@ public class AdminHomeScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnaddRem)
-                    .addComponent(jLabel1)
-                    .addComponent(btncreateAcc)
-                    .addComponent(btnprovideFeedback))
-                .addGap(0, 55, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnlogOff)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnaddRem)
+                            .addComponent(jLabel1)
+                            .addComponent(btncreateAcc)
+                            .addComponent(btnprovideFeedback))
+                        .addGap(0, 55, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnlogOff))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnaddRemSec)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +110,9 @@ public class AdminHomeScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(26, 26, 26)
-                .addComponent(btnaddRem, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnaddRem)
+                .addGap(10, 10, 10)
+                .addComponent(btnaddRemSec)
                 .addGap(18, 18, 18)
                 .addComponent(btncreateAcc, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -120,7 +137,7 @@ public class AdminHomeScreen extends javax.swing.JFrame {
 
     private void btnaddRemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnaddRemMouseClicked
         // TODO add your handling code here:
-        new AddRemoveSecDoc().setVisible(true);
+        new AddRemoveDoctors().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnaddRemMouseClicked
 
@@ -135,6 +152,12 @@ public class AdminHomeScreen extends javax.swing.JFrame {
         new ProvideFeedbackandViewRatings().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnprovideFeedbackMouseClicked
+
+    private void btnaddRemSecMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnaddRemSecMouseClicked
+        // TODO add your handling code here:
+        new AddRemoveSecretary().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnaddRemSecMouseClicked
 
     /**
      * @param args the command line arguments
@@ -173,6 +196,7 @@ public class AdminHomeScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnaddRem;
+    private javax.swing.JButton btnaddRemSec;
     private javax.swing.JButton btncreateAcc;
     private javax.swing.JButton btnlogOff;
     private javax.swing.JButton btnprovideFeedback;

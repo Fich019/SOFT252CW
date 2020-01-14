@@ -8,6 +8,8 @@ package formsMain.formsSecretary;
 import Users.userSecretary.GiveMeds;
 import Users.userSecretary.ViewPrescription;
 import Users.userSecretary.GetPatientPrescriptions;
+import Users.userSecretary.GetQuantity;
+import Users.userSecretary.OrderMeds;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -46,6 +48,9 @@ public class FGiveMeds extends javax.swing.JFrame {
         txtprescrition = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         cmbxmeds = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        lbmedQuantity = new javax.swing.JLabel();
+        btnorder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -90,6 +95,25 @@ public class FGiveMeds extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Quantity:");
+
+        lbmedQuantity.setText("jLabel4");
+        lbmedQuantity.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                lbmedQuantityInputMethodTextChanged(evt);
+            }
+        });
+
+        btnorder.setText("ORDER");
+        btnorder.setEnabled(false);
+        btnorder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnorderMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,23 +123,33 @@ public class FGiveMeds extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnback))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnconfirm))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2)
                                     .addComponent(lblPatientName))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cmbxpatientID, 0, 82, Short.MAX_VALUE)
-                                    .addComponent(cmbxmeds, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(cmbxpatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbxmeds, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3)
+                                .addGap(2, 2, 2))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbmedQuantity)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(btnorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -132,9 +166,13 @@ public class FGiveMeds extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(cmbxmeds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbxmeds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(lbmedQuantity))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnorder))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnconfirm)
                 .addContainerGap())
@@ -174,6 +212,12 @@ public class FGiveMeds extends javax.swing.JFrame {
         ViewPrescription v = new ViewPrescription();
         String userdata = v.getprescription(cmbxpatientID.getSelectedItem().toString(), cmbxmeds.getSelectedItem().toString());
         txtprescrition.setText(userdata);
+        
+        GetQuantity q = new GetQuantity();
+        String quantity = q.GetQuantity(cmbxmeds.getSelectedItem().toString());
+        
+        
+        
     }//GEN-LAST:event_formWindowActivated
 
     private void cmbxpatientIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxpatientIDActionPerformed
@@ -189,9 +233,13 @@ public class FGiveMeds extends javax.swing.JFrame {
             cmbxmeds.addItem(assign2.get(i));
         }
         
+        
+        
         ViewPrescription v = new ViewPrescription();
         String userdata = v.getprescription(cmbxpatientID.getSelectedItem().toString(),cmbxmeds.getSelectedItem().toString());
         txtprescrition.setText(userdata);
+        
+        
     }//GEN-LAST:event_cmbxpatientIDActionPerformed
 
     private void btnconfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnconfirmMouseClicked
@@ -206,10 +254,44 @@ public class FGiveMeds extends javax.swing.JFrame {
 
     private void cmbxmedsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxmedsActionPerformed
         // TODO add your handling code here:
+        
+        GetQuantity q = new GetQuantity();
+        String quantity = q.GetQuantity(cmbxmeds.getSelectedItem().toString());
+        lbmedQuantity.setText(quantity);
+        
+        
         ViewPrescription v = new ViewPrescription();
         String userdata = v.getprescription(cmbxpatientID.getSelectedItem().toString(),cmbxmeds.getSelectedItem().toString());
         txtprescrition.setText(userdata);
+        
+        int quan = Integer.parseInt(lbmedQuantity.getText());
+        System.out.println(quan);
+        if (quan < 5){
+            //JOptionPane.showMessageDialog(null, "Stock low, order more!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+            btnorder.setEnabled(true);
+            
+            
+        }
+        else{
+            
+            btnorder.setEnabled(false);
+        }
     }//GEN-LAST:event_cmbxmedsActionPerformed
+
+    private void btnorderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnorderMouseClicked
+        // TODO add your handling code here:
+        OrderMeds m = new OrderMeds();
+        m.addMeds(cmbxmeds.getSelectedItem().toString());
+        JOptionPane.showMessageDialog(null, "Meds successfully ordered!", "Ok", JOptionPane.INFORMATION_MESSAGE);
+        
+        new FGiveMeds().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnorderMouseClicked
+
+    private void lbmedQuantityInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_lbmedQuantityInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbmedQuantityInputMethodTextChanged
 
     /**
      * @param args the command line arguments
@@ -250,12 +332,15 @@ public class FGiveMeds extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnback;
     private javax.swing.JButton btnconfirm;
+    private javax.swing.JButton btnorder;
     private javax.swing.JComboBox<String> cmbxmeds;
     private javax.swing.JComboBox<String> cmbxpatientID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblPatientName;
+    private javax.swing.JLabel lbmedQuantity;
     private javax.swing.JTextArea txtprescrition;
     // End of variables declaration//GEN-END:variables
 }
