@@ -165,7 +165,7 @@ public class SecretaryHomeScreen extends javax.swing.JFrame {
 
     private void btngiveMedsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btngiveMedsMouseClicked
         // TODO add your handling code here:
-        new GiveMeds().setVisible(true);
+        new FGiveMeds().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btngiveMedsMouseClicked
 

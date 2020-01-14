@@ -134,25 +134,36 @@
       {
         "date": "11\/07\/2018",
         "attended": "true",
+        "notes": "needs a checkup at a later date",
         "doctorid": "D0002",
         "patientid": "P0001"
       },
       {
         "date": "02\/12\/2007",
         "attended": "true",
+        "notes": null,
         "doctorid": "D0003",
         "patientid": "P0002"
       },
       {
-        "date": "05\/08\/2020",
+        "date": "05\/10\/2020",
         "attended": "false",
+        "notes": "looked well",
         "doctorid": "D0001",
         "patientid": "P0001"
       },
       {
         "date": "02\/12\/2007",
         "attended": "false",
-        "doctorid": "D0003",
+        "notes": "changed the value",
+        "doctorid": "D0002",
+        "patientid": "P0001"
+      },
+      {
+        "date": "02\/10\/2012",
+        "attended": "true",
+        "notes": "Must come back for more after two weeks",
+        "doctorid": "D0001",
         "patientid": "P0002"
       }
     ]
@@ -161,40 +172,55 @@
     "prescriptions": [
       {
         "dosage": "Two tablets daily",
+        "given": true,
         "doctorid": "D0001",
         "patientid": "P0001",
-        "doctornotes": "Must come back for more after two weeks",
         "medicine": "Codene"
       },
       {
         "dosage": "Use when having alergic reaction",
+        "given": false,
         "doctorid": "D0002",
         "patientid": "P0002",
-        "doctornotes": null,
         "medicine": "Epinephrin"
       },
       {
         "dosage": "One pill daily",
+        "given": false,
         "doctorid": "D0003",
-        "patientid": "P0001",
-        "doctornotes": "Come back after one week for more",
+        "patientid": "P0003",
         "medicine": "Vicodin"
+      },
+      {
+        "dosage": "2",
+        "given": false,
+        "doctorid": "D0001",
+        "patientid": "P0002",
+        "medicine": "Codene"
       }
     ]
   },
   {
     "Medicines": [
       {
+        "ordered": true,
         "quantity": "30",
         "name": "Codene"
       },
       {
-        "quantity": "34",
+        "ordered": true,
+        "quantity": "35",
         "name": "Epinephrin"
       },
       {
+        "ordered": true,
         "quantity": "16",
         "name": "Vicodin"
+      },
+      {
+        "ordered": false,
+        "quantity": "12",
+        "name": "ibuprofen"
       }
     ]
   },

@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Users.userPaitent;
+package Users.userSecretary;
 
 import Main.DataController;
-import Users.PatientUser;
 import java.util.Objects;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -16,13 +15,13 @@ import org.json.simple.JSONObject;
  * @author Zack
  */
 public class ViewPrescription {
-    protected String doctorID;
-    protected String patientID;
-    protected String medicine;
-    protected String dosage;
+    private String dosage;
+    private String doctorid;
+    private String patientid;
+    private String medicine;
     
-    public String getPrescription(){
-        String userID = PatientUser.userID;
+    public String getprescription(String userID){
+        
         String prescriptionStr = "";
         
         JSONArray jsonArray = DataController.getJSONData();
@@ -31,27 +30,28 @@ public class ViewPrescription {
                    
             try{
                 JSONObject curUser = (JSONObject) jsonArray.get(i);
-                JSONArray prescriptions = (JSONArray) curUser.get("prescriptions");
+                JSONArray patients = (JSONArray) curUser.get("prescriptions");
                 
                 //System.out.println(appointments);
             
-                for (int j = 0; j < prescriptions.size(); j++){
-                    var currentApp = (JSONObject) prescriptions.get(j);
+                for (int j = 0; j < patients.size(); j++){
+                    var currentPat = (JSONObject) patients.get(j);
                     //System.out.println(currentApp);
                     
-                    String patID = (String) currentApp.get("patientid");
+                    String patID = (String) currentPat.get("patientid");
                         //System.out.println(currentApp);
                         
                     if(Objects.equals(patID, userID)){
-                        doctorID = (String) currentApp.get("doctorid");
-                        patientID = (String) currentApp.get("patientid");
-                        medicine = (String) currentApp.get("medicine");
-                        dosage = (String) currentApp.get("dosage");
+                        dosage = (String) currentPat.get("dosage");
+                        doctorid = (String) currentPat.get("doctorid");
+                        patientid = (String) currentPat.get("patientid");
+                        medicine = (String) currentPat.get("medicine");
                             
                             
-                        prescriptionStr += ("Administered by Dr: "+doctorID+
-                            "\n    for Patient: "+patientID+"\n   Medicine: "+medicine
-                            +"\n    Dosage: "+dosage+"\n\n");
+                        prescriptionStr += ("Prescription given by: "+doctorid+
+                            "\n to: "+patientid+" of: "+medicine
+                            +"\nin amount: "+dosage
+                            +"\n\n");
                             
                     }
                 }

@@ -13,7 +13,7 @@ import formsMain.formsDoctor.DoctorHomeScreen;
  */
 public class DoctorUser implements User{
     
-    private String userID = "";
+    public static String userID = "";
     private String name = "";
     private String address = "";
     private String password = "";

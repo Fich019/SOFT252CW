@@ -5,6 +5,8 @@
  */
 package formsMain.formsDoctor;
 
+import formsMain.HomeScreen;
+
 /**
  *
  * @author Zack
@@ -27,21 +29,114 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        btncreateAppointment = new javax.swing.JButton();
+        btnorderMeds = new javax.swing.JButton();
+        btnlogoff1 = new javax.swing.JButton();
+        btnconsult = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Doctor HomeScreen");
+
+        btncreateAppointment.setText("Create appointment");
+        btncreateAppointment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncreateAppointmentMouseClicked(evt);
+            }
+        });
+
+        btnorderMeds.setText("Order medicine");
+        btnorderMeds.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnorderMedsMouseClicked(evt);
+            }
+        });
+        btnorderMeds.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnorderMedsActionPerformed(evt);
+            }
+        });
+
+        btnlogoff1.setText("Log off");
+        btnlogoff1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnlogoff1MouseClicked(evt);
+            }
+        });
+
+        btnconsult.setText("Consult");
+        btnconsult.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnconsultMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnlogoff1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(btncreateAppointment)
+                            .addComponent(btnorderMeds)
+                            .addComponent(btnconsult))
+                        .addGap(0, 251, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(btncreateAppointment)
+                .addGap(18, 18, 18)
+                .addComponent(btnorderMeds)
+                .addGap(18, 18, 18)
+                .addComponent(btnconsult)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addComponent(btnlogoff1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnorderMedsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnorderMedsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnorderMedsActionPerformed
+
+    private void btnlogoff1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlogoff1MouseClicked
+        // TODO add your handling code here:
+        new HomeScreen().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnlogoff1MouseClicked
+
+    private void btncreateAppointmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncreateAppointmentMouseClicked
+        // TODO add your handling code here:
+        new FCreateAppointments().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btncreateAppointmentMouseClicked
+
+    private void btnorderMedsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnorderMedsMouseClicked
+        // TODO add your handling code here:
+        new CreateMedsOrder().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnorderMedsMouseClicked
+
+    private void btnconsultMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnconsultMouseClicked
+        // TODO add your handling code here:
+        new Consult().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnconsultMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +174,10 @@ public class DoctorHomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnconsult;
+    private javax.swing.JButton btncreateAppointment;
+    private javax.swing.JButton btnlogoff1;
+    private javax.swing.JButton btnorderMeds;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

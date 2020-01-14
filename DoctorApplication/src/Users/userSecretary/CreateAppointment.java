@@ -51,8 +51,8 @@ public class CreateAppointment {
                 
                 for (int j = 0; j < patients.size(); j++){
                     var currentDoc = (JSONObject) patients.get(j);
-                    String docID = (String) currentDoc.get("id");
-                    patIDs.add(docID);
+                    String patID = (String) currentDoc.get("id");
+                    patIDs.add(patID);
                 }
             }
             catch(Exception e){
