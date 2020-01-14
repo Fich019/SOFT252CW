@@ -45,7 +45,7 @@ public class GiveMeds {
         return meds;
     }
     
-    public void GiveMeds(String userID){
+    public void GiveMeds(String userID, String meds){
         
         JSONArray jsonArray = DataController.getJSONData();
         
@@ -59,8 +59,9 @@ public class GiveMeds {
                     var currentPat = (JSONObject) prescriptions.get(j);
                     //System.out.println(currentPat);
                     String patID = (String) currentPat.get("patientid");
+                    String medicine = (String) currentPat.get("medicine");
                     
-                    if(Objects.equals(patID, userID)){
+                    if(Objects.equals(patID, userID) && Objects.equals(medicine, meds)){
                         currentPat.put("given", true);
                     }
                             

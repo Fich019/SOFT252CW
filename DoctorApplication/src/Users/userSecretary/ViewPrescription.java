@@ -20,7 +20,7 @@ public class ViewPrescription {
     private String patientid;
     private String medicine;
     
-    public String getprescription(String userID){
+    public String getprescription(String userID, String meds){
         
         String prescriptionStr = "";
         
@@ -39,9 +39,10 @@ public class ViewPrescription {
                     //System.out.println(currentApp);
                     
                     String patID = (String) currentPat.get("patientid");
+                    String med = (String) currentPat.get("medicine");
                         //System.out.println(currentApp);
                         
-                    if(Objects.equals(patID, userID)){
+                    if(Objects.equals(patID, userID)&& Objects.equals(med, meds)){
                         dosage = (String) currentPat.get("dosage");
                         doctorid = (String) currentPat.get("doctorid");
                         patientid = (String) currentPat.get("patientid");
